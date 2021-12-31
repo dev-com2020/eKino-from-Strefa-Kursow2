@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Check Out | Movie Center
+{% endblock title %}
+
+{% block cssblock %}
+    <link rel="stylesheet" href="{% static 'css/base_style.css' %}"/>
+{% endblock cssblock %} {% block content %}
+
+    <section class="section1 relative text-center">
+        <div class="jumbotron text-center">
+            <h1 class="separator"><small>SKLEP</small></h1>
+            <span class="font-weight-bold">Płatność</span>
+        </div>
+    </section>
+<section class="section2">
+<nav aria-label="breadcrumb" class="bg-light section-xl">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="mau" href="#">Start</a></li>
+            <li class="breadcrumb-item"><a class="mau" href="#">Płatność</a></li>
+             </ol>
+        </nav>
+    </section>
+
+    <div class="container">
+        <br>
+        <h3><strong>Twoje zamówienie</strong></h3>
+        <br>
+        <table class="table table-hover text-left">
+            <thead class="bg-danger">
+            <tr class="bg-accent">
+                <th class="text-light">Filmy</th>
+                <th></th>
+                <th></th>
+                <th class="text-light">Cena</th>
+            </tr>
+            </thead>
+            {% for cart_movie in cart.movies.all %}
+                <tr>
+                    <td class="text-dark">
+                        <a href="{% url 'movie:movie-detail' cart_movie.movie.slug %}" class="text-body">
+                            {{ cart_movie.movie.title }}
+                        </a>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td class="text-body">
+                        {{ cart_movie.movie.price }} $
+                    </td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td><strong>Razem</strong></td>
+                <td></td>
+                <td></td>
+                <td><strong>{{ cart.get_total }} $</strong></td>
+            </tr>
+            <tr></tr>
+        </table>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <form class="rd-mailform text-left" method="post" action="{% url 'checkout:payment' %}">
+                        {% csrf_token %}
+                        {{ form | crispy }}
+                        {% if redirect_field_value %}
+                            <input type="hidden" name="{{ redirect_field_name }}"
+                                   value="{{ redirect_field_value }}"/>
+                        {% endif %}
+                        <div class="text-center">
+                            <button class="btn btn-danger btn-lg btn-block" type="submit">zapłać!</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+

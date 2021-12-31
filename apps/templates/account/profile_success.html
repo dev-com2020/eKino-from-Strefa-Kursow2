@@ -1,0 +1,45 @@
+% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block title %}
+  Zapisz się | eKINO
+{% endblock title %}
+
+{% block cssblock %}
+    <link rel="stylesheet" href="{% static 'css/base_style.css' %}">
+{% endblock cssblock %}
+
+{% block content %}
+
+<section class="relative">
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1 class="separator"><small>Aktualizuj</small></h1>
+            <span class="font-weight-bold">Popraw swój profil</span>
+        </div>
+    </div>
+</section>
+<nav aria-label="breadcrumb" class="bg-light section-xl">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a class="mau" href="#">Start</a></li>
+      <li class="breadcrumb-item"><a class="mau" href="#">{{ user.username }}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Zaktualizuj profil</li>
+    </ol>
+</nav>
+
+<div class="row">
+  <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+          <div class="card-body">
+            <p>
+              <h1>Twój profil został zmieniony</h1>
+              <a class="btn btn-danger" href="{% url 'core:home' %}">Wróc do strony głównej</a>
+            </p>
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock content %}

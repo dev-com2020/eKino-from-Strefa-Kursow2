@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Movie | eKINO
+{% endblock title %}
+
+{% block cssblock %}
+    <link rel="stylesheet" href="{% static 'css/base_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/movie/movie_list.css' %}">
+{% endblock cssblock %}
+
+
+{% block content %}
+    <div class="mt-2">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <section class="section1 relative text-center">
+        <div class="jumbotron text-center">
+            <h1 class="separator"><small>FILM</small></h1>
+            <span class="font-weight-bold">Szukaj filmu</span>
+        </div>
+    </section>
+
+    <section class="section2">
+        <nav aria-label="breadcrumb" class="bg-light section-xl">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="mau" href="#">Home</a></li>
+                <li class="breadcrumb-item"><a class="mau" href="#">Movie</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Szukane filmy: {{ request.GET.movie_name }}</li>
+            </ol>
+        </nav>
+    </section>
+
+    <!--Movie list-->
+    {% if movie_list %}
+    <div class="page-single movie_list">
+        <div class="container">
+            <div class="row ipad-width2">
+                <div class="col-md-8 col-sm-12 col-xs-12">
+
+                    {% for movie in movie_list %}
+                        <div class="movie-item-style-2">
+                            {% if movie.poster %}
+                            <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" width="200" height="300">
+                            {% else %}
+                            <img class="card-img-top" src="{% static 'img/no-avatar.png' %}" alt="">
+                            {% endif %}
+                            <div class="mv-item-infor">
+                                <h6><a href="{% url 'movie:movie-detail' movie.slug %}">{{ movie.title }}
+                                    <span>( {{ movie.year }} )</span></a></h6>
+                                <p class="rate"><i class="fas fa-star"></i><span> {{ movie.imdb_score }} </span> /10</p>
+                                <p class="genres"> {{ movie.genres }} </p>
+                                <p class="describe"> {{ movie.description|truncatewords:25 }}...</p>
+                                <p>Wydano: {{ movie.year }}</p>
+                                <p>Cena: {{ movie.price }}$</p>
+                                <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn btn-outline-danger">Kupuje</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    {% else %}
+    <div class="page-single movie_list">
+        <div class="container">
+    <div class="alert alert-danger" role="alert">
+        <strong>{{ request.GET.movie_name }} </strong> Nie znaleziono :( Spróbuj ponownie <a href="/movie/all/" class="alert-link">tutaj!</a>.
+      </div>
+        {% endif %}</div></div>
+{% endblock content %}

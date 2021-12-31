@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Twój koszyk | eKINO
+{% endblock title %}
+
+{% block cssblock %}
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+{% endblock cssblock %}
+
+{% block content %}
+    <section class="relative text-center">
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1 class="separator">Wybierz swoje filmy</h1>
+                <span class="font-weight-bold">Koszyk</span>
+            </div>
+        </div>
+    </section>
+    </head>
+
+    <body>
+    <nav aria-label="breadcrumb" class="bg-light section-xl">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="mau" href="#">Start</a></li>
+            <li class="breadcrumb-item"><a class="mau" href="#">Sklep</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+            Koszyk zakupowy</li>
+        </ol>
+    </nav>
+    <div class="page text-center animated" style="animation-duration: 500ms;">
+        <main class="page-content">
+            <section class="section section-inset-1">
+                <div class="container">
+                    <div class="row row-45 justify-content-end">
+                        <div class="col-12 section-inset-1">
+                            <div class="table-responsive">
+                                <table class="table table-hover text-left">
+                                    <thead>
+                                    <tr class="bg-accent">
+                                    <th></th>
+                                    <th>Produkty</th>
+                                    <th>Ceny</th>
+                                        </tr>
+                                    </thead>
+
+                                    {% for cart_movie in cart.movies.all %}
+                                        <tr>
+                                            <td>
+                                                <a href="{% url 'cart:remove-from-cart' cart_movie.movie.slug %}"><span
+                                                        class="icon icon-xs fa-trash icon-gray"></span></a>
+                                            </td>
+                                            <td>
+                                                <a href="{% url 'movie:movie-detail' cart_movie.movie.slug %}" class="text-dark">
+                                                    {{ cart_movie.movie.title }}
+                                                </a>
+                                            </td>
+                                            <td>{{ cart_movie.movie.price }}$</td>
+                                        </tr>
+                                    {% empty %}
+                                        <tr>
+                                            <td>Koszyk jest pusty</td>
+                                        </tr>
+                                    {% endfor %}
+{% if cart.get_total %}
+                                        </tbody>
+                                        </table>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="coupon col-md-5 col-sm-5 no-padding-left pull-left">
+                                                <div class="row">
+                                                    <div class="pull-right" style="margin: 10px">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="col-12 col-md-7 col-md-offset-5 col-xl-4 col-xl-offset-8">
+                                        <div class="table-responsive">
+                                        <table class="table table-hover text-left">
+                                        <thead>
+                                        <tr class="bg-accent">
+                                            <th>Podsumowanie</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-gray">Total</td>
+                                            <td class="fw-b">{{ cart.get_total }}$</td>
+                                        </tr>
+                                    {% endif %}
+                                    </tbody>
+                                    </table>
+                                    </div>
+                                    {% if cart.get_total %}
+                                        <a class="btn btn-danger btn-sm btn-min-width-lg offset-custom-5"
+                                           href="{% url 'checkout:checkout' %}">Przejdź do płatności</a>
+                                    {% else %}
+                                        <a class="btn btn-danger btn-sm btn-min-width-lg offset-custom-5"
+                                           href="/movie/all/">Continue Shopping</a>
+                                    {% endif %}
+                                    </td>
+                                    </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </div>
+
+{% endblock content %}
+
