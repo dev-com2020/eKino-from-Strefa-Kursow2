@@ -10,4 +10,4 @@ python-decouple==3.3
 django-widget-tweaks==1.4.8
 django-recaptcha3
 django-recaptcha
-six
+#six
