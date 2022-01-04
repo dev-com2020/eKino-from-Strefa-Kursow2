@@ -93,7 +93,7 @@
                   {% endif %}
                     <h4><a href="{% url 'movie:movie-detail' movie.slug %}">{{ movie.title }}</a></h4>
                     <p>{{ movie.country }}</p>
-                    <p class="rate"><i class="fas fa-star"></i><span> {{ movie.imdb_score }} </span> /10</p
+                    <p class="rate"><i class="fas fa-star"></i><span> {{ movie.imdb_score }} </span> /10</p>
                     <p class="dollar font-weight-bold"> {{ movie.price }}PLN</p>
                     {% if user.is_authenticated %}
                     <span><a href="{% url 'cart:add-to-cart' movie.slug %}">WYKUP FILM</a></span>
