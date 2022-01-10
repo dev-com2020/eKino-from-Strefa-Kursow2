@@ -30,7 +30,9 @@
   margin: 0.25em;
 }
 .jumbotron.text-center {
-  background: #1f1f1f;
+  background-image: url('../img/di-nhan-8-phuong-hoang-bong-toi-x-men-dark-phoenix-2019-slider.jpg');
+  background-size: cover;
+  opacity: 0.7;
   margin: 0;
 }
 h1.separator {

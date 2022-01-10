@@ -28,59 +28,79 @@
 
                 <div class="carousel-item active">
                     <div class="row">
-                        <div class="col-6">
-                            <img src="https://posterposse.com/wp-content/uploads/2016/04/Jungle_Book_Tryptich.jpg"
-                                 class="d-block w-100" alt="..." height="300" width="280">
+                        <div>
+                            <center><img src="https://posterposse.com/wp-content/uploads/2016/04/Jungle_Book_Tryptich.jpg"
+                                 class="d-block w-100" alt="..." width=100%>
                             <a href="/movie/the-jungle-book">THE JUNGLE BOOK</a>
-                            <p>2016, UK, Drama, Romance</p>
+                            <p>2016, UK, Drama, Romance</p></center>
                         </div>
-                        <div class="col-6">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div><center>
                           <img src="https://images.hdqwalls.com/wallpapers/bridge-of-spies.jpg"
-                          class="d-block w-100" alt="..." height="300" width="280">
+                          class="d-block w-100" alt="..." width=100%>
                             <a href="/movie/bridge-of-spies">BRIDGE OF SPIES</a>
-                            <p>2016, USA, Drama, Sport</p>
+                            <p>2016, USA, Drama, Sport</p></center>
                         </div>
                     </div>
                 </div>
 
                 <div class="carousel-item ">
                     <div class="row">
-                        <div class="col-6">
+                        <div><center>
                                  <img src="https://images2.alphacoders.com/674/674173.jpg"
-                                 class="d-block w-100" alt="..." height="300" width="280">
+                                 class="d-block w-100" alt="..." width=100%>
                             <a href="/movie/ant-man">ANT-MAN</a>
-                            <p>2015, USA, Adventure, Biography, Drama</p>
+                            <p>2015, USA, Adventure, Biography, Drama</p></center>
                         </div>
-                        <div class="col-6">
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="row">
+                         <div><center>
                           <img src="https://cdn.hipwallpaper.com/i/33/26/x6ydmT.jpg"
-                          class="d-block w-100" alt="..." height="300" width="280">
+                          class="d-block w-100" alt="..." width=100%>
                             <a href="/movie/warcraft">WARCRAFT</a>
-                            <p>2016, USA, Biography, Drama, Crime, Thriller</p>
+                            <p>2016, USA, Biography, Drama, Crime, Thriller</p></center>
                         </div>
                     </div>
                 </div>
 
                 <div class="carousel-item ">
                     <div class="row">
-                        <div class="col-6">
+                        <div><center>
                           <img src="https://i.pinimg.com/originals/a2/32/f3/a232f37b6fd35319f4eae25e435a5a91.jpg"
-                          class="d-block w-100" alt="..." height="300" width="280">
+                          class="d-block w-100" alt="..." width=100%>
 
                             <a href="/movie/star-trek-beyond">STAR TREK BEYOND
                             </a>
-                            <p>2016, USA, Adventure, Animation, Comedy</p>
+                            <p>2016, USA, Adventure, Animation, Comedy</p></center>
                         </div>
-                        <div class="col-6">
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="row">
+                        <div><center>
                           <img src="https://wallpapercave.com/wp/wp1926880.jpg"
-                          class="d-block w-100" alt="..." height="300" width="280">
+                          class="d-block w-100" alt="..." width=100%>
                             <a href="/movie/the-revenant">THE REVENANT</a>
-                            <p>2017, USA, Biography, Crime, Drama, History</p>
+                            <p>2017, USA, Biography, Crime, Drama, History</p></center>
                         </div>
                     </div>
                 </div>
 
             </div>
         </div>
+                    <a class="carousel-control-prev" href="#movieCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Poprzedni</span>
+  </a>
+  <a class="carousel-control-next" href="#movieCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Następny</span>
+  </a>
     </section>
     <section class="movieList">
         <h1 class="text-center text-black">Oglądaj film ONLINE</h1>
@@ -94,7 +114,7 @@
                   {% else %}
                     <img class="card-img-top" src="{% static 'img/no-avatar.png' %}" alt="" height="400" width="100">
                   {% endif %}
-                    <h4><a href="{% url 'movie:movie-detail' movie.slug %}" class="title">{{ movie.title }}</a></h4>
+                    <h6><a href="{% url 'movie:movie-detail' movie.slug %}" class="title">{{ movie.title }}</a></h6>
                     <p>{{ movie.country }}</p>
                     <p class="rate"><i class="fas fa-star"></i><span> {{ movie.imdb_score }} </span> /10</p>
                     <p class="dollar font-weight-bold"> {{ movie.price }}PLN</p>
