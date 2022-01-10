@@ -71,7 +71,7 @@ przycisk {
 }
 .movieCarousel{
   position: relative;
-  background-image: url('../img/bg-image-1.jpg');
+  background-color: #333333;
   background-size: cover;
   padding-left: 200px;
   padding-right: 200px;
