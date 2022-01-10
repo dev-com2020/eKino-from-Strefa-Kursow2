@@ -8,12 +8,14 @@
   body {
     width: 100%;
     height: 100%;
+    background-color: #1f1f1f;
+    color: white;
   }
 
   .header-nav {
     position: relative;
-    left: 60%;
-    padding-right: 3em;
+    left: 5%;
+    font-size: 18px;
   }
   .header-nav:before,
   .header-nav:after {
@@ -35,7 +37,6 @@
   }
   .menu li a {
     display: block;
-    padding: 10px;
     position: relative;
     transition: color 0.3s;
     text-decoration: none;
@@ -43,9 +44,10 @@
 
   .search-button {
     position: absolute;
-    right: 20px;
+    right: 0%;
     top: 50%;
     transform: translate(0, -50%);
+    z-index: 999;
   }
 
   .search-toggle {
@@ -93,14 +95,15 @@
 
   #header-1 .search-box {
     position: absolute;
-    top: 100%;
-    bottom: 0;
-    width: 100%;
+    top: -90%;
+    right: -45%;
+    width: 40%;
     height: 100%;
     max-height: 0;
     transform: translateY(100%);
-    background-color: #f8fbef;
-    color: #130202;
+    background-color: transparent;
+    border-radius: 4vh;
+    border-color: #E29635;
     transition: all 0.3s;
     z-index: 999;
   }
@@ -108,12 +111,11 @@
     width: 100%;
     height: 100%;
     padding: 0 1em;
-    background-color: transparent;
+    background-color: #1f1f1f;
     opacity: 0;
-    color: rgb(7, 0, 0);
   }
   ::placeholder {
-    color: #ddcccc !important;
+    color: #aeaeae !important;
     opacity: 0.5;
   }
   #header-1 .search-box .search-input::-webkit-input-placeholder {
@@ -128,7 +130,6 @@
 
   /*------------------------------------------*/
   .navbar {
-    background-color: #130202 !important;
     height: 70px;
   }
 
@@ -141,7 +142,8 @@
   }
   .navbar li a:hover {
     list-style-type: none;
-    background-color: #d81a24;
+    background-color: #E29635;
+    color: #1f1f1f;
     width: auto;
     height: 40px;
     border-radius: 10px;
@@ -175,7 +177,7 @@
   .dropdown-item:focus,
   .dropdown-item:hover {
     color: red;
-    background-color: #130202 !important;
+    background-color: #130202;
     height: auto !important;
   }
 </style>
@@ -208,7 +210,7 @@
             </div>
             <ul class="navbar-nav ml-auto menu">
               <li class="nav-item">
-                <a class="nav-link active" href="{% url 'core:home' %}">⌂ Start</a>
+                <a class="nav-link active" href="{% url 'core:home' %}"><span class="iconsHeader">⌂</span> Start</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'movie:movie-list' %}"
@@ -225,8 +227,9 @@
               {% if user.is_authenticated %}
               <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
                 <a class="list-item" href="{% url 'cart:cart' %}">
-                  <i class="fas fa-shopping-cart"></i></a>
+                  <i class="fas fa-shopping-cart" style="font-size: 16px;"></i></a>
               </li>
+              <input type="text" placeholder="co dzisiaj oglądamy?">
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
@@ -258,13 +261,15 @@
               method="GET"
               action="{% url 'movie:search-movie' %}"
               class="search-box"
+
             >
               <input
                 type="text"
                 class="form-control text search-input"
+                style="border: 1px solid #ffc735; border-radius:4vh;"
                 name="movie_name"
                 type="text"
-                placeholder="Wyszukaj"
+                placeholder="Co dzisiaj oglądamy?"
                 value="{{ request.GET.search }}"
               />
             </form>

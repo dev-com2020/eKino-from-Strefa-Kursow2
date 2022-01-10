@@ -5,70 +5,57 @@
   position: relative;
   text-transform: uppercase;
   font-family: "Roboto Slab", serif;
-  color: rgb(0, 0, 0);
   -webkit-font-smoothing: antialiased;
+  background-color: #1f1f1f;
+  color: white;
 }
 
 .text-center {
   text-align: center !important;
 }
-
 .separator {
   display: flex;
   align-items: center;
   text-align: center;
 }
-
 .separator::before,
 .separator::after {
   content: "";
   flex: 1;
-  border-bottom: 0.5px solid rgb(0, 0, 0);
 }
-
+.separator::before {
+  margin: 0.25em;
+}
+.separator::after {
+  margin: 0.25em;
+}
 .jumbotron.text-center {
-  background: rgb(255, 255, 255);
+  background: #1f1f1f;
   margin: 0;
 }
-
 h1.separator {
-  width: 85%;
+  width: 35%;
   margin: auto;
 }
-
-.relative {
-  background-color: white;
-}
-
-.jumbotron.text-center {
-  background: white;
-  margin: 0;
-}
-
 .bg-light {
-  background-color: #f8f9fa !important;
+  background: #1f1f1f;
 }
-
 .section-xl {
   padding-top: 10px;
   padding-bottom: 5px;
 }
-
 .breadcrumb {
   justify-content: center;
   margin: 0;
-  background-color: #f8f9fa !important;
 }
-
 .mau {
-  color: #d81a24;
+  color: white;
+  font-size: 24px;
 }
-
 .mau:hover {
   text-decoration: none;
-  color: #000;
+  color: #bbb;
 }
-
 .sigin {
   text-transform: uppercase;
   font-family: "Roboto Slab", serif;
@@ -92,7 +79,7 @@ hr {
 }
 
 .btn.SI:hover {
-  background: black;
+  background: #e2e2e2;
 }
 
 .part {
@@ -150,7 +137,7 @@ table.table.table-hover.text-left {
 }
 
 .bg-accent {
-  background-color: #d81a24;
+  background-color: yellow;
   color: white;
 }
 
@@ -170,7 +157,7 @@ table.table.table-hover.text-left {
 }
 
 .fa-trash:hover {
-  color: #000;
+  color: #e2e2e2;
 }
 
 .icon-xs {
@@ -180,7 +167,7 @@ table.table.table-hover.text-left {
 }
 
 .icon-gray {
-  color: #b7b7b7;
+  color: #e2e2e2;
 }
 
 .fa-trash {
@@ -250,7 +237,7 @@ form {
 
 .quantity .minus:hover,
 .quantity .plus:hover {
-  background-color: #dad8da;
+  background-color: ##e2e2e2;
 }
 
 .quantity .minus {
@@ -266,7 +253,7 @@ form {
 }
 
 .page .text-gray {
-  color: #b7b7b7;
+  color: ##e2e2e2;
 }
 
 .quantity input {

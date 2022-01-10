@@ -13,6 +13,8 @@
 
 
 {% block content %}
+
+<div class="mainContainer">
     <div class="mt-2">
         {% if messages %}
             {% for message in messages %}
@@ -27,17 +29,17 @@
     </div>
     <section class="section1 relative text-center">
         <div class="jumbotron text-center">
-            <h1 class="separator"><small>FILM</small></h1>
+            <h1 class="separator">FILM</h1>
             <span class="font-weight-bold">Szukaj filmu</span>
         </div>
     </section>
 
     <section class="section2">
-        <nav aria-label="breadcrumb" class="bg-light section-xl">
-            <ol class="breadcrumb">
+        <nav aria-label="breadcrumb" class="bg-light section-xl" style="background: #1f1f1f !important">
+            <ol class="breadcrumb" style="background: #1f1f1f !important">
                 <li class="breadcrumb-item"><a class="mau" href="#">Home</a></li>
                 <li class="breadcrumb-item"><a class="mau" href="#">Movie</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Szukane filmy: {{ request.GET.movie_name }}</li>
+                <li class="breadcrumb-item active" aria-current="page"><a class="mau" href="#">Szukane filmy: {{ request.GET.movie_name }}</a></li>
             </ol>
         </nav>
     </section>
@@ -76,8 +78,8 @@
     {% else %}
     <div class="page-single movie_list">
         <div class="container">
-    <div class="alert alert-danger" role="alert">
-        <strong>{{ request.GET.movie_name }} </strong> Nie znaleziono :( Spróbuj ponownie <a href="/movie/all/" class="alert-link">tutaj!</a>.
+    <div class="alert" role="alert" style="background: white; color: #1f1f1f;">
+        <strong>{{ request.GET.movie_name }} </strong> Nie znaleziono :( Spróbuj ponownie <a href="/movie/all/" class="alert-link" style="color: rgba(226,150,53,1);">tutaj!</a>.
       </div>
         {% endif %}</div></div>
 {% endblock content %}

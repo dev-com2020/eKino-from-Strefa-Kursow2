@@ -13,6 +13,7 @@
 
 
 {% block content %}
+
     <div class="mt-2">
         {% if messages %}
             {% for message in messages %}
@@ -27,17 +28,17 @@
     </div>
     <section class="section1 relative text-center">
         <div class="jumbotron text-center">
-            <h1 class="separator"><small>Lista filmów</small></h1>
+            <h1 class="separator">Lista filmów</h1>
             <span class="font-weight-bold">Wszystkie filmy w bazie</span>
         </div>
     </section>
 
     <section class="section2">
-        <nav aria-label="breadcrumb" class="bg-light section-xl">
-            <ol class="breadcrumb">
+        <nav aria-label="breadcrumb" class="bg-light section-xl" style="background: #1f1f1f !important">
+            <ol class="breadcrumb" style="background: #1f1f1f !important">
                 <li class="breadcrumb-item"><a class="mau" href="#">Start</a></li>
                 <li class="breadcrumb-item"><a class="mau" href="#">Filmy</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Wszystkie filmy</li>
+                <li class="breadcrumb-item active" aria-current="page"><a class="mau" href="#">Wszystkie filmy</a></li>
             </ol>
         </nav>
     </section>
@@ -55,14 +56,14 @@
                             <img class="card-img-top" src="{% static 'img/no-avatar.png' %}" alt="">
                             {% endif %}
                             <div class="mv-item-infor">
-                                <h6><a href="{% url 'movie:movie-detail' movie.slug %}">{{ movie.title }}
+                                <h6><a href="{% url 'movie:movie-detail' movie.slug %}" style="color: rgba(226,150,53) !important;">{{ movie.title }}
                                     <span>( {{ movie.year }} )</span></a></h6>
                                 <p class="rate"><i class="fas fa-star"></i><span> {{ movie.imdb_score }} </span> /10</p>
                                 <p class="genres"> {{ movie.genres }} </p>
                                 <p class="describe"> {{ movie.description|truncatewords:25 }}...</p>
                                 <p>Wydano: {{ movie.year }}</p>
                                 <p>Cena: {{ movie.price }}$</p>
-                                <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn btn-outline-danger">WYKUP FILM</a>
+                                <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn" style="border-radius: 10px; background: rgb(255,200,53) !important; background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%) !important; ">WYKUP FILM</a>
                             </div>
                         </div>
                     {% endfor %}
@@ -82,7 +83,7 @@
                                 {% endif %}
 
                                 <li class="page-item active">
-                                    <a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}
+                                    <a class="page-link" href="?page={{ page_obj.number }}" >{{ page_obj.number }}
                                         <span class="sr-only">(current)</span>
                                     </a>
                                 </li>
@@ -90,7 +91,7 @@
                                 {% if page_obj.has_next %}
                                     <li class="page-item">
                                         <a class="page-link" href="?page={{ page_obj.next_page_number }}"
-                                           aria-label="Next">
+                                           aria-label="Next" >
                                             <span aria-hidden="true">&raquo;</span>
                                             <span class="sr-only">Następny</span>
                                         </a>
@@ -104,5 +105,4 @@
         </div>
     </div>
 
-    </div>
 {% endblock content %}

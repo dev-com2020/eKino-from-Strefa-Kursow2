@@ -11,22 +11,23 @@ Logowanie | eKINO
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-{% endblock %}
+{% endblock cssblock %}
 
 {% block content %}
-<section class="relative">
-    <div class="container">
-        <div class="jumbotron text-center">
-            <h1 class="separator"><small>Witamy!</small></h1>
+
+<section class="relative text-center">
+        <div class="container">
+            <div class="jumbotron text-center">
+            <h1 class="separator">Witamy!</h1>
             <span class="font-weight-bold">eKINO</span>
         </div>
     </div>
 </section>
 
-<nav aria-label="breadcrumb" class="bg-light section-xl">
-    <ol class="breadcrumb">
+<nav aria-label="breadcrumb" class="bg-light section-xl" style="background: #1f1f1f !important; color: #1f1f1f !important; border: none !important;">
+    <ol class="breadcrumb" style="background: #1f1f1f !important">
         <li class="breadcrumb-item"><a class="mau" href="#">Start</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Login</li>
+        <li class="breadcrumb-item active" aria-current="page"><a class="mau" href="#">Login</a></li>
     </ol>
 </nav>
 
@@ -38,8 +39,8 @@ Logowanie | eKINO
             <div class="col-12 col-xl-8 ">
                 <div class="btn-group-variant text-center ">
                     <a class="btn btn-primary btn-lg btn-facebook mr-4 fm-size" href="#">
-                        <i class="fab fa-facebook-f"></i>Facebook</a>
-                    <a class="btn btn-info btn-lg btn-twitter" href="#"><i class="fab fa-twitter"></i>Twitter</a>
+                        <i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a class="btn btn-info btn-lg btn-twitter" href="#"><i class="fab fa-twitter"></i> Twitter</a>
                     <a class="btn btn-danger btn-lg btn-gplus ml-4" href="#"><i
                             class="fab fa-google-plus-g pr-1"></i> Google+</a>
                 </div>
@@ -50,10 +51,10 @@ Logowanie | eKINO
                             {% csrf_token %}
                             {{ form|crispy }}
                             <div class="text-center">
-                                <button class="btn btn-danger" type="submit">ZAPISUJE SIE!</button>
+                                <button class="btn" type="submit" style="border-radius: 10px; background: rgb(255,200,53) !important; background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%) !important; width: 100% !important; padding: 15px 0;">ZAPISUJE SIE!</button>
                             </div>
-                            <p class="mt-3">Nie masz konta?<a href="{% url 'signup' %}">Zapisz się!</a>
-                                <br>Zapomniałeś hasła?<a href="{% url 'account:password_reset' %}">Zresetuj hasło</a>
+                            <p class="mt-3">Nie masz konta?<a href="{% url 'signup' %}"> Zapisz się!</a>
+                                <br>Zapomniałeś hasła?<a href="{% url 'account:password_reset' %}"> Zresetuj hasło</a>
                             </p>
                         </form>
                     </div>
@@ -61,7 +62,7 @@ Logowanie | eKINO
             </div>
         </div>
     </div>
-</section>
+    </section>
 {% endblock content %}
 
 {% block jsblock %}

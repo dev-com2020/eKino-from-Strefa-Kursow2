@@ -13,18 +13,19 @@
 {% endblock cssblock %}
 
 {% block content %}
+
 <section class="relative">
   <div class="container">
       <div class="jumbotron text-center">
-          <h1 class="separator"><small>Aktualizacja</small></h1>
+          <h1 class="separator">Aktualizacja</h1>
           <span class="font-weight-bold">Potwierdź swój mail</span>
       </div>
   </div>
 </section>
-<nav aria-label="breadcrumb" class="bg-light section-xl">
-  <ol class="breadcrumb">
+<nav aria-label="breadcrumb" class="bg-light section-xl" style="background: #1f1f1f !important">
+  <ol class="breadcrumb" style="background: #1f1f1f !important">
       <li class="breadcrumb-item"><a class="mau" href="#">Start</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Potwierdź mail</li>
+      <li class="breadcrumb-item active" aria-current="page"><a class="mau" href="#">Potwierdź E-mail</a></li>
   </ol>
 </nav>
 
@@ -36,11 +37,12 @@
               <h1>Sprawdź skrzynkę</h1>
               <p>Wysłaliśmy na Twoją skrzynkę maila z linkiem potwierdzającym</p>
             </p>
-            <a class="btn btn-danger" href="{% url 'core:home' %}">Powrót do strony głównej</a>
+            <a class="btn btn-danger" href="{% url 'core:home' %}" style="color: rgba(226,150,53) !important;">Powrót do strony głównej</a>
           </p>
             </p>
           </div>
       </div>
   </div>
 </div>
+
 {% endblock %}

@@ -7,65 +7,57 @@
   font-family: "Roboto Slab", serif;
   color: rgb(0, 0, 0);
   -webkit-font-smoothing: antialiased;
+  background-color: #1f1f1f;
+  color: white;
 }
 
 .text-center {
   text-align: center !important;
 }
-
 .separator {
   display: flex;
   align-items: center;
   text-align: center;
 }
-
 .separator::before,
 .separator::after {
   content: "";
   flex: 1;
-  border-bottom: 0.5px solid rgb(0, 0, 0);
 }
-
 .separator::before {
   margin: 0.25em;
 }
-
 .separator::after {
   margin: 0.25em;
 }
-
 .jumbotron.text-center {
-  background: rgb(255, 255, 255);
+  background-image: url('../img/di-nhan-8-phuong-hoang-bong-toi-x-men-dark-phoenix-2019-slider.jpg');
+  background-size: cover;
+  opacity: 0.7;
   margin: 0;
 }
-
 h1.separator {
   width: 35%;
   margin: auto;
 }
-
 .bg-light {
-  background-color: #f8f9fa !important;
+  background: #1f1f1f;
 }
-
 .section-xl {
   padding-top: 10px;
   padding-bottom: 5px;
 }
-
 .breadcrumb {
   justify-content: center;
   margin: 0;
-  background-color: #f8f9fa !important;
 }
-
 .mau {
-  color: #d81a24;
+  color: white;
+  font-size: 24px;
 }
-
 .mau:hover {
   text-decoration: none;
-  color: #000;
+  color: #bbb;
 }
 section.part.section.section-inset-1 {
   padding-top: 0;
@@ -802,7 +794,7 @@ h6,
   font-family: inherit;
   font-weight: 700;
   line-height: 1.2;
-  color: inherit;
+  color: white;
 }
 
 p {
@@ -833,7 +825,7 @@ user agent stylesheet p {
 }
 
 address a {
-  color: #000;
+  color: white;
 }
 
 a {

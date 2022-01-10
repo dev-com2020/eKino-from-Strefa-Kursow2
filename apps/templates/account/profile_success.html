@@ -14,19 +14,20 @@
 
 {% block content %}
 
+
 <section class="relative">
     <div class="container">
         <div class="jumbotron text-center">
-            <h1 class="separator"><small>Aktualizuj</small></h1>
+            <h1 class="separator">Aktualizuj<</h1>
             <span class="font-weight-bold">Popraw swój profil</span>
         </div>
     </div>
 </section>
-<nav aria-label="breadcrumb" class="bg-light section-xl">
-    <ol class="breadcrumb">
+<nav aria-label="breadcrumb" class="bg-light section-xl" style="background: #1f1f1f !important">
+    <ol class="breadcrumb" style="background: #1f1f1f !important">
       <li class="breadcrumb-item"><a class="mau" href="#">Start</a></li>
       <li class="breadcrumb-item"><a class="mau" href="#">{{ user.username }}</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Zaktualizuj profil</li>
+      <li class="breadcrumb-item active" aria-current="page"><a class="mau" href="#">Zaktualizuj profil</a></li>
     </ol>
 </nav>
 
@@ -36,10 +37,11 @@
           <div class="card-body">
             <p>
               <h1>Twój profil został zmieniony</h1>
-              <a class="btn btn-danger" href="{% url 'core:home' %}">Wróc do strony głównej</a>
+              <a class="btn btn-danger" href="{% url 'core:home' %}" style="color: rgba(226,150,53) !important;">Wróc do strony głównej</a>
             </p>
           </div>
       </div>
   </div>
 </div>
+
 {% endblock content %}

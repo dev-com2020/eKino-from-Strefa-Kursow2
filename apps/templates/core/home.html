@@ -2,10 +2,12 @@
 {% load static %}
 
 {% block cssblock %}
+
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
 {% endblock cssblock %}
 
 {% block title %}
@@ -13,6 +15,7 @@
 {% endblock title %}
 
 {% block content %}
+<div class="mainContainer">
     <section class="movieCarousel">
         <div class="carousel_background"></div>
         <div id="movieCarousel" class="carousel slide" data-ride="carousel">
@@ -91,7 +94,7 @@
                   {% else %}
                     <img class="card-img-top" src="{% static 'img/no-avatar.png' %}" alt="" height="400" width="100">
                   {% endif %}
-                    <h4><a href="{% url 'movie:movie-detail' movie.slug %}">{{ movie.title }}</a></h4>
+                    <h4><a href="{% url 'movie:movie-detail' movie.slug %}" class="title">{{ movie.title }}</a></h4>
                     <p>{{ movie.country }}</p>
                     <p class="rate"><i class="fas fa-star"></i><span> {{ movie.imdb_score }} </span> /10</p>
                     <p class="dollar font-weight-bold"> {{ movie.price }}PLN</p>
@@ -167,7 +170,7 @@
         </h5>
         <div class="newsletter_footer ">
           <input class="justify-content-center input " type="email" placeholder="Twój mail..">
-          <a>
+          <a class="btn btn-danger" href="{% url 'login' %}" style="border-radius: 10px; background: rgb(255,200,53) !important; background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%) !important; padding: 11px 35px;">
             Subskrybuj
           </a>
         </div>
@@ -245,6 +248,7 @@
 
         </div>
       </section>
+    </div>
 
 {% endblock content %}
 
