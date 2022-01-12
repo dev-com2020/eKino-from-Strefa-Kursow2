@@ -33,7 +33,7 @@
         </div>
     </section>
 
-    <section class="section2">
+    <section class="section2" style="margin-bottom: 50px;">
         <nav aria-label="breadcrumb" class="bg-light section-xl" style="background: #1f1f1f !important">
             <ol class="breadcrumb" style="background: #1f1f1f !important">
                 <li class="breadcrumb-item"><a class="mau" href="#">Start</a></li>
@@ -46,12 +46,11 @@
     <!--Movie list-->
     <div class="page-single movie_list">
         <div class="container">
-            <div class="row ipad-width2">
-                <div class="col-md-8 col-sm-12 col-xs-12">
-                    {% for movie in movie_list %}
+            <div class="col-6" style="float: left;">
+                {% for movie in movie_list %}
                         <div class="movie-item-style-2">
                             {% if movie.poster %}
-                            <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" width="200" height="300">
+                            <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" width="250" height="280">
                             {% else %}
                             <img class="card-img-top" src="{% static 'img/no-avatar.png' %}" alt="">
                             {% endif %}
@@ -62,11 +61,45 @@
                                 <p class="genres"> {{ movie.genres }} </p>
                                 <p class="describe"> {{ movie.description|truncatewords:25 }}...</p>
                                 <p>Wydano: {{ movie.year }}</p>
-                                <p>Cena: {{ movie.price }}$</p>
+                                <p>Cena: {{ movie.price }} PLN</p>
                                 <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn" style="border-radius: 10px; background: rgb(255,200,53) !important; background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%) !important; ">WYKUP FILM</a>
                             </div>
                         </div>
                     {% endfor %}
+                    <!--Pagination-->
+                    {% if is_paginated %}
+
+                    {% endif %}
+            </div>
+            <div class="col-6" style="float: right;">
+                {% for movie in list %}
+                        <div class="movie-item-style-2">
+                            {% if movie.poster %}
+                            <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" width="250" height="280">
+                            {% else %}
+                            <img class="card-img-top" src="{% static 'img/no-avatar.png' %}" alt="">
+                            {% endif %}
+                            <div class="mv-item-infor">
+                                <h6><a href="{% url 'movie:movie-detail' movie.slug %}" style="color: rgba(226,150,53) !important;">{{ movie.title }}
+                                    <span>( {{ movie.year }} )</span></a></h6>
+                                <p class="rate"><i class="fas fa-star"></i><span> {{ movie.imdb_score }} </span> /10</p>
+                                <p class="genres"> {{ movie.genres }} </p>
+                                <p class="describe"> {{ movie.description|truncatewords:25 }}...</p>
+                                <p>Wydano: {{ movie.year }}</p>
+                                <p>Cena: {{ movie.price }} PLN</p>
+                                <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn" style="border-radius: 10px; background: rgb(255,200,53) !important; background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%) !important; ">WYKUP FILM</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    {% if is_paginated %}
+
+                    {% endif %}
+            </div>
+        </div>
+        <div class="container">
+            <div class="row ipad-width2">
+                <div class="col-12">
                     <!--Pagination-->
                     {% if is_paginated %}
                         <nav class="d-flex justify-content-center wow fadeIn">

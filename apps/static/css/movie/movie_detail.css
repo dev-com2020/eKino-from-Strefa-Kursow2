@@ -13,7 +13,8 @@ div.row {
   text-transform: uppercase;
   font-family: "Roboto Slab", serif;
   color: rgb(0, 0, 0);
-  background-color: white;
+  background-color: #1f1f1f;
+    color: white;
 }
 .Cetr {
   text-align: justify;
@@ -44,7 +45,9 @@ div.row {
 }
 
 .jumbotron.text-center {
-  background-color: white;
+  background-image: url('../../img/di-nhan-8-phuong-hoang-bong-toi-x-men-dark-phoenix-2019-slider.jpg');
+  background-size: cover;
+  opacity: 0.7;
   margin: 0;
 }
 h1.separator {
@@ -64,11 +67,12 @@ h1.separator {
   background-color: #f8f9fa !important;
 }
 .mau {
-  color: #d81a24;
+  color: white;
+  font-size: 24px;
 }
 .mau:hover {
   text-decoration: none;
-  color: #000;
+  color: #bbb;
 }
 .TitleO {
   text-transform: uppercase;
@@ -224,3 +228,8 @@ div.row.welcome {
 .cast-box-media img{
   width: 100%;
 }
+
+  ::placeholder {
+    color: black !important;
+    opacity: 0.5;
+  }

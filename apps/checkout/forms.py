@@ -4,6 +4,15 @@ import re
 
 
 class CheckoutForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(CheckoutForm, self).__init__(*args, **kwargs)
+        self.fields['fullname'].label = "Imię i nazwisko"
+        self.fields['shipping_address'].label = "Adres wysyłki"
+        self.fields['phone_number'].label = "Telefon"
+        self.fields['order_description'].label = "Komentarz do zamówienia"
+
+
     order_description = forms.CharField(widget=forms.Textarea, required=False)
 
     class Meta:

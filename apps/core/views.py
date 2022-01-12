@@ -16,7 +16,7 @@ class HomeListView(ListView):
     model = Movie
     context_object_name = "movie_list"
     template_name = "core/home.html"
-    paginate_by = 8
+    paginate_by = 6
 
 
 def error404(request, exception):

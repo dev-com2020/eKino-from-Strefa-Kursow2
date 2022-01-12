@@ -1,3 +1,6 @@
+import random
+from itertools import count
+
 from django.views.generic import DetailView, ListView
 
 from .models import Movie
@@ -12,10 +15,15 @@ class MovieDetailView(DetailView):
 
 class MovieListView(ListView):
     model = Movie
-    queryset = Movie.objects.order_by("year")
+    queryset = Movie.objects.all().order_by('?')[:10]
     context_object_name = "movie_list"
     template_name = "movie/movie_list.html"
     paginate_by = 10
+
+    def get_context_data(self, **kwargs):
+        context = super(MovieListView, self).get_context_data(**kwargs)
+        context['list'] = Movie.objects.all().order_by('?')[:10]
+        return context
 
 
 class SearchMovie(ListView):

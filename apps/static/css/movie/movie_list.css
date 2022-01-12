@@ -97,3 +97,9 @@
 .movie-item-style-2 .mv-item-infor p {
   padding-bottom: 5px;
 }
+
+.rowOne{
+width: 50%;
+height: 50%;
+background-color: red;
+}

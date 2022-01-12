@@ -4,7 +4,7 @@
 {% load crispy_forms_tags %}
 
 {% block title %}
-    Check Out | Movie Center
+    Wykup dostęp | eKINO
 {% endblock title %}
 
 {% block cssblock %}
@@ -33,7 +33,7 @@
         <br>
         <table class="table table-hover text-left">
             <thead class="bg-danger">
-            <tr class="bg-accent">
+            <tr class="bg-accent" style="background: rgb(255,200,53) !important; background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%) !important; color: #1f1f1f !important;">
                 <th class="text-light">Filmy</th>
                 <th></th>
                 <th></th>
@@ -43,22 +43,22 @@
             {% for cart_movie in cart.movies.all %}
                 <tr>
                     <td class="text-dark">
-                        <a href="{% url 'movie:movie-detail' cart_movie.movie.slug %}" class="text-body">
+                        <a href="{% url 'movie:movie-detail' cart_movie.movie.slug %}" class="text-body"  style="color: #e2e2e2 !important;">
                             {{ cart_movie.movie.title }}
                         </a>
                     </td>
                     <td></td>
                     <td></td>
-                    <td class="text-body">
-                        {{ cart_movie.movie.price }} $
+                    <td class="text-body" td style="color: #e2e2e2 !important;">
+                        {{ cart_movie.movie.price }} PLN
                     </td>
                 </tr>
             {% endfor %}
             <tr>
-                <td><strong>Razem</strong></td>
+                <td  style="color: #e2e2e2 !important;"><strong>Razem</strong></td>
                 <td></td>
                 <td></td>
-                <td><strong>{{ cart.get_total }} $</strong></td>
+                <td  style="color: #e2e2e2 !important;"><strong>{{ cart.get_total }} PLN</strong></td>
             </tr>
             <tr></tr>
         </table>
@@ -67,7 +67,7 @@
     <div class="row">
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div class="card card-signin my-5">
-                <div class="card-body">
+                <div class="card-body" style="background-color: #1f1f1f;">
                     <form class="rd-mailform text-left" method="post" action="{% url 'checkout:payment' %}">
                         {% csrf_token %}
                         {{ form | crispy }}
@@ -76,7 +76,7 @@
                                    value="{{ redirect_field_value }}"/>
                         {% endif %}
                         <div class="text-center">
-                            <button class="btn btn-lg btn-block" type="submit" style="border-radius: 10px; background: rgb(255,200,53) !important; background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%) !important; width: 100% !important; padding: 15px 0;">zapłać!</button>
+                            <button class="btn btn-lg btn-block" type="submit" style="border-radius: 10px; background: rgb(255,200,53) !important; background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%) !important; width: 100% !important; padding: 15px 0;">Zapłać!</button>
                         </div>
                     </form>
                 </div>

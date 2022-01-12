@@ -44,6 +44,8 @@
         </nav>
     </section>
 
+    {% include 'includes/searchForm.html' %}
+
     <!--Movie list-->
     {% if movie_list %}
     <div class="page-single movie_list">
@@ -59,14 +61,14 @@
                             <img class="card-img-top" src="{% static 'img/no-avatar.png' %}" alt="">
                             {% endif %}
                             <div class="mv-item-infor">
-                                <h6><a href="{% url 'movie:movie-detail' movie.slug %}">{{ movie.title }}
+                                <h6><a href="{% url 'movie:movie-detail' movie.slug %}" style="color: rgba(226,150,53) !important;">{{ movie.title }}
                                     <span>( {{ movie.year }} )</span></a></h6>
                                 <p class="rate"><i class="fas fa-star"></i><span> {{ movie.imdb_score }} </span> /10</p>
                                 <p class="genres"> {{ movie.genres }} </p>
                                 <p class="describe"> {{ movie.description|truncatewords:25 }}...</p>
                                 <p>Wydano: {{ movie.year }}</p>
                                 <p>Cena: {{ movie.price }}$</p>
-                                <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn btn-outline-danger">Kupuje</a>
+                                <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn" style="border-radius: 10px; background: rgb(255,200,53) !important; background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%) !important; padding: 11px 35px;">Kupuje</a>
                             </div>
                         </div>
                     {% endfor %}

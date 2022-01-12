@@ -3,22 +3,14 @@ html,
 body {
   font-family: "Roboto Slab", serif;
 }
-przycisk {
-
-  position: relative;
-  weight: 100%;
-  border: 1px solid #1f1f1f;
-  color: #1f1f1f;
-  background: rgb(255,200,53);
-  background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%);
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 22px;
-  border-radius: 4vh;
-  padding: 15px 35px;
-  transition: all 0.2s;
+.col-3{
+border-style: solid;
+border-width: 1px;
+border-color: rgb(255,200,53);
+border-radius: 15px;
+margin: 45px;
 }
+
 
 .btnLong{
  position: relative;
@@ -200,6 +192,11 @@ przycisk {
   position: relative;
 
 }
+a {
+background-color: transparent;
+}
+
+
 .comingSoon_content .btn-custom a{
   position: relative;
   border: 1px solid white;
@@ -382,4 +379,22 @@ przycisk {
 #testimonialCarousel .carousel-indicators li.active{
   background: #bbb;
 
+}
+
+carousel-inner .searchMovie{
+width: 100vw;
+height: 50vh;
+background-color: red;
+
+}
+
+.sigin {
+  text-transform: uppercase;
+  font-family: "Roboto Slab", serif;
+  margin-top: 50px;
+  margin-bottom: 0;
+  letter-spacing: 0.12em;
+  text-align: left;
+  font-size: 26px;
+  font-weight: bold;
 }

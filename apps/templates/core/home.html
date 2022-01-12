@@ -15,7 +15,6 @@
 {% endblock title %}
 
 {% block content %}
-<div class="mainContainer">
     <section class="movieCarousel">
         <div class="carousel_background"></div>
         <div id="movieCarousel" class="carousel slide" data-ride="carousel">
@@ -102,12 +101,16 @@
     <span class="sr-only">Następny</span>
   </a>
     </section>
+
+{% include 'includes/searchForm.html' %}
+
     <section class="movieList">
         <h1 class="text-center text-black">Oglądaj film ONLINE</h1>
         <hr>
         <div class="container">
             <div class="row movielist-item">
               {% for movie in movie_list %}
+
                 <div class="col-3">
                   {% if movie.poster %}
                     <img class="card-img-top" src="{{ movie.poster.url }}" alt="{{ movie.title }}" height="400px" width="100px">
@@ -117,14 +120,16 @@
                     <h6><a href="{% url 'movie:movie-detail' movie.slug %}" class="title">{{ movie.title }}</a></h6>
                     <p>{{ movie.country }}</p>
                     <p class="rate"><i class="fas fa-star"></i><span> {{ movie.imdb_score }} </span> /10</p>
-                    <p class="dollar font-weight-bold"> {{ movie.price }}PLN</p>
+                    <p class="dollar font-weight-bold"> {{ movie.price }} PLN</p>
                     {% if user.is_authenticated %}
                     <span><a href="{% url 'cart:add-to-cart' movie.slug %}">WYKUP FILM</a></span>
                   {% else %}
                   <span><a href="{% url 'login' %}">WYKUP FILM</a></span>
+
                   {% endif %}
                 </div>
                 {% endfor %}
+
             </div>
 
 
@@ -138,40 +143,38 @@
         <br>
         <div class="row">
           <div class="col-6">
-            <h3>DEADPOOL 2</h3>
+            <h3>Morbius</h3>
             <br>
             <span>Action</span>
-            <span>Comedy</span>
+            <span>Drama</span>
             <span>Adventure</span>
             <div>
               <br>
               <span>
                 <i class="fa fa-calendar-alt"></i>
-                30 September, 2020
+                1 April, 2022
               </span>
             </div>
             <br>
             <p>
-              After losing Vanessa (Morena Baccarin), the love of his life, 4th-wall breaking mercenary Wade Wilson aka
-              Deadpool (Ryan Reynolds) must assemble a team and protect a young, full-figured mutant Russell Collins aka
-              Firefist (Julian Dennison) from Cable (Josh Brolin).
+              Biochemist Michael Morbius tries to cure himself of a rare blood disease, but he inadvertently infects himself with a form of vampirism instead.
             </p>
             <p>
               Director:
-              <span>David Leitch</span>
+              <span>Daniel Espinosa</span>
             </p>
             <p>
               Writers:
-              <span>Rhett Reese, Paul Wernick</span>
+              <span>Matt Sazama(screenplay),Burk Sharpless(screenplay),Roy Thomas(Marvel comics)</span>
             </p>
             <p>
               Stars:
-              <span> Ryan Reynolds, Josh Brolin, Morena Baccarin</span>
+              <span> Jared Leto, Adria Arjona</span>
             </p>
 
           </div>
           <div class="col-6">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/D86RtevtfrA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wnq3w_EqeNc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="btn-custom">
             <a>
@@ -268,7 +271,6 @@
 
         </div>
       </section>
-    </div>
 
 {% endblock content %}
 

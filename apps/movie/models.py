@@ -42,3 +42,4 @@ class Movie(models.Model):
 
     def get_remove_from_cart_url(self):
         return reverse("cart:remove-from-cart", kwargs={"slug": self.slug})
+
