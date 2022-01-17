@@ -1,21 +1,48 @@
 <style>
   * {
     box-sizing: border-box;
-    font-family: "Roboto Slab", serif;
+  font-family: 'Poppins', sans-serif;
   }
+
 
   html,
   body {
     width: 100%;
-    height: 100%;
     background-color: #1f1f1f;
     color: white;
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
+  .navbar {
+    height: 87px;
+  }
+
+  .container{
+  min-width: 70%;
+  max-height: 100%;
+  margin: 0 auto;
+  }
+
+  .navbar li {
+    margin-right: 21px;
+    list-style-type: none;
+  }
+
+  .navbar li a {
+    color: #fff;
+  }
+  .navbar li a:hover {
+
+    color: #E29635;
+    transition: 0.3s;
   }
 
   .header-nav {
     position: relative;
-    left: 5%;
-    font-size: 18px;
+    left: 65%;
+    font-size: 14px;
+    line-height: 21px;
   }
   .header-nav:before,
   .header-nav:after {
@@ -38,23 +65,30 @@
   .menu li a {
     display: block;
     position: relative;
-    transition: color 0.3s;
+    transition: 0.3s;
     text-decoration: none;
   }
 
   .search-button {
     position: absolute;
-    right: 0%;
+    right: -85%;
     top: 50%;
+    height: 44px;
+    width: 267px;
     transform: translate(0, -50%);
     z-index: 999;
+    border-radius: 4vh;
+    border: 1px solid #E29635;
   }
 
   .search-toggle {
     position: relative;
+    top: 40%;
+    right: -85%;
     display: block;
-    height: 12px;
-    width: 12px;
+    height: 14px;
+    width: 14px;
+    color: #fff;
   }
   .search-toggle::before,
   .search-toggle::after {
@@ -64,7 +98,7 @@
     transition: all 0.1s;
   }
   .search-toggle::before {
-    border: 2px solid #f3f3f3;
+    border: 2px solid #E29534;
     border-radius: 50%;
     width: 100%;
     height: 100%;
@@ -73,8 +107,8 @@
   }
   .search-toggle::after {
     height: 2px;
-    width: 7px;
-    background: #f3f3f3;
+    width: 9px;
+    background: #E29534;
     top: 10px;
     left: 8px;
     transform: rotate(45deg);
@@ -84,43 +118,45 @@
     border-width: 1px;
     border-radius: 0;
     transform: rotate(45deg);
-    top: -1px;
+    top: -2px;
     left: 4px;
   }
   .search-toggle.active::after {
-    width: 12px;
-    left: -1px;
+    width: 14px;
+    left: -2px;
     top: 4px;
   }
 
   #header-1 .search-box {
     position: absolute;
-    top: -90%;
-    right: -45%;
-    width: 40%;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
     max-height: 0;
-    transform: translateY(100%);
+    transform: translate(50%, 0);
     background-color: transparent;
-    border-radius: 4vh;
-    border-color: #E29635;
     transition: all 0.3s;
     z-index: 999;
   }
-  #header-1 .search-box .search-input {
-    width: 100%;
-    height: 100%;
-    padding: 0 1em;
-    background-color: white;
-    opacity: 0;
 
+
+  #header-1 .search-box .search-input {
+    position: absolute;
+    top: 0;
+    left: 65%;
+    width: 60%;
+    height: 100%;
+    padding: 1em 1em;
+    background-color: transparent;
+    opacity: 0;
+    padding-left: 80px;
+    border-color: transparent;
+    outline: none;
   }
-  ::placeholder {
-    color: black !important;
-    opacity: 0.5;
-  }
+
   #header-1 .search-box .search-input::-webkit-input-placeholder {
-    color: rgba(255, 255, 255, 0.4);
+    color: white;
   }
   #header-1.show .search-box {
     max-height: 40px;
@@ -129,27 +165,14 @@
     opacity: 1;
   }
 
+
+
+
+
   /*------------------------------------------*/
-  .navbar {
-    height: 70px;
-  }
 
-  .navbar li {
-    margin-right: 2em;
-  }
 
-  .navbar li a {
-    color: #fff;
-  }
-  .navbar li a:hover {
-    list-style-type: none;
-    background-color: #E29635;
-    color: #1f1f1f;
-    width: auto;
-    height: 40px;
-    border-radius: 10px;
-    transition: 0.3s;
-  }
+
 
   .dropdown {
     position: relative;
@@ -160,12 +183,12 @@
   .dropdown-menu {
     display: none;
     position: absolute;
-    width: auto;
-    background: #151515;
+    width: 100%;
+    background: #1f1f1f;
     margin-top: auto;
     top: 100%;
     z-index: 999;
-    border-radius: 4vh;
+<!--    border-radius: 4vh;-->
     text-decoration: none;
     transition: all 0.1s 0.1s ease-in;
     -moz-transition: all 0.1s 0.1s ease-in;
@@ -174,14 +197,18 @@
   .dropdown:hover .dropdown-menu {
     display: block;
     text-decoration: none;
+        color: #E29635;
   }
 
   .dropdown-item:focus,
   .dropdown-item:hover {
-    color: red;
-    background-color: #130202;
     height: auto !important;
+        color: #E29635;
+        border-radius: 4vh;
   }
+
+
+
 </style>
 
 <header>
@@ -189,21 +216,19 @@
   <nav class="navbar navbar-expand-md sticky-top">
     <div id="menuTop" class="container">
       <a class="navbar-branch" href="/">
-        <img
-          src="/static/img/logo-default.png"
-        />
+        <img src="/static/img/logo-default.png"/>
       </a>
-      <button
-        class="navbar-toggler collapsed"
-        aria-expanded="false"
-        aria-controls="navbarExample01"
-        aria-label="Toggle navigation"
-        type="button"
-        data-target="#navbarsExample01"
-        data-toggle="collapse"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<!--      <button-->
+<!--        class="navbar-toggler collapsed"-->
+<!--        aria-expanded="false"-->
+<!--        aria-controls="navbarExample01"-->
+<!--        aria-label="Toggle navigation"-->
+<!--        type="button"-->
+<!--        data-target="#navbarsExample01"-->
+<!--        data-toggle="collapse"-->
+<!--      >-->
+<!--        <span class="navbar-toggler-icon"></span>-->
+<!--      </button>-->
       <div class="navbar-collapse collapse" id="navbarExample01">
         <header id="header-1" class="header">
           <nav class="header-nav">
@@ -212,27 +237,25 @@
             </div>
             <ul class="navbar-nav ml-auto menu">
               <li class="nav-item">
-                <a class="nav-link active" href="{% url 'core:home' %}"><span class="iconsHeader">⌂</span> Start</a>
+                <a class="nav-link active" href="{% url 'core:home' %}"><span class="iconsHeader" style="font-size: 18px;">⌂</span> Strona główna</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'movie:movie-list' %}"
-                  >⚅ Filmy
-                </a>
+                <a class="nav-link" href="{% url 'movie:movie-list' %}"><span class="iconsHeader" style="font-size: 18px;">⚅</span> Filmy i seriale</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'core:about' %}">☺ O nas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'core:contact' %}">☏ Kontakt</a>
-              </li>
+<!--              <li class="nav-item">-->
+<!--                <a class="nav-link" href="{% url 'core:about' %}">☺ O nas</a>-->
+<!--              </li>-->
+<!--              <li class="nav-item">-->
+<!--              <a class="nav-link" href="{% url 'core:contact' %}">☏ Kontakt</a>-->
+<!--             </li>-->
 
               {% if user.is_authenticated %}
-              <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
-                <a class="list-item" href="{% url 'cart:cart' %}">
-                  <i class="fas fa-shopping-cart" style="font-size: 16px; "></i></a>
-              </li>
-              <input type="text" placeholder="co dzisiaj oglądamy?" style=" border-radius: 4vh;
-    border-color: #E29635; font-size: 16px; padding-left: 10px;">
+<!--              <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>-->
+<!--                <a class="list-item" href="{% url 'cart:cart' %}">-->
+<!--                  <i class="fas fa-shopping-cart"></i></a>-->
+<!--              </li>-->
+<!--              <input type="text" placeholder="co dzisiaj oglądamy?" style=" border-radius: 4vh;-->
+<!--    border-color: #E29635; font-size: 16px; padding-left: 10px;">-->
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
@@ -264,12 +287,13 @@
               method="GET"
               action="{% url 'movie:search-movie' %}"
               class="search-box"
+              style="color: white;"
 
             >
               <input
                 type="text"
-                class="form-control text search-input"
-                style="border: 1px solid #ffc735; border-radius:4vh;"
+                class="search-input"
+                style="border: none; color: white !important;"
                 name="movie_name"
                 type="text"
                 placeholder="Co dzisiaj oglądamy?"

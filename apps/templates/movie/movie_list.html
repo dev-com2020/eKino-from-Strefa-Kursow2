@@ -26,12 +26,12 @@
             {% endfor %}
         {% endif %}
     </div>
-    <section class="section1 relative text-center">
-        <div class="jumbotron text-center">
-            <h1 class="separator">Lista filmów</h1>
-            <span class="font-weight-bold">Wszystkie filmy w bazie</span>
-        </div>
-    </section>
+<!--    <section class="section1 relative text-center">-->
+<!--        <div class="jumbotron text-center">-->
+<!--            <h1 class="separator">Lista filmów</h1>-->
+<!--            <span class="font-weight-bold">Wszystkie filmy w bazie</span>-->
+<!--        </div>-->
+<!--    </section>-->
 
     <section class="section2" style="margin-bottom: 50px;">
         <nav aria-label="breadcrumb" class="bg-light section-xl" style="background: #1f1f1f !important">
@@ -50,19 +50,20 @@
                 {% for movie in movie_list %}
                         <div class="movie-item-style-2">
                             {% if movie.poster %}
-                            <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" width="250" height="280">
+                            <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" height="320">
                             {% else %}
                             <img class="card-img-top" src="{% static 'img/no-avatar.png' %}" alt="">
                             {% endif %}
                             <div class="mv-item-infor">
-                                <h6><a href="{% url 'movie:movie-detail' movie.slug %}" style="color: rgba(226,150,53) !important;">{{ movie.title }}
+                                <h6><a href="{% url 'movie:movie-detail' movie.slug %}" style="color: rgba(226,150,53);">{{ movie.title }}
                                     <span>( {{ movie.year }} )</span></a></h6>
                                 <p class="rate"><i class="fas fa-star"></i><span> {{ movie.imdb_score }} </span> /10</p>
                                 <p class="genres"> {{ movie.genres }} </p>
-                                <p class="describe"> {{ movie.description|truncatewords:25 }}...</p>
+                                <p class="describe" style="margin-bottom: 6px; padding-bottom: 6px;"> {{ movie.description|truncatewords:25 }}...</p>
                                 <p>Wydano: {{ movie.year }}</p>
                                 <p>Cena: {{ movie.price }} PLN</p>
-                                <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn" style="border-radius: 10px; background: rgb(255,200,53) !important; background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%) !important; ">WYKUP FILM</a>
+                                <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn" style="width: 50%; padding: 6px; border-radius: 20px; background: rgb(255,200,53); background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%); ">WYKUP FILM</a><br>
+                                <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn" style="width: 50%; margin-top: 5px; padding: 6px; border-radius: 20px; background: transparent; border: 1px solid #aeaeae; color: #aeaeae;">DOWIEDZ SIĘ WIĘCEJ</a>
                             </div>
                         </div>
                     {% endfor %}
@@ -75,19 +76,21 @@
                 {% for movie in list %}
                         <div class="movie-item-style-2">
                             {% if movie.poster %}
-                            <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" width="250" height="280">
+                            <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" height="320">
                             {% else %}
                             <img class="card-img-top" src="{% static 'img/no-avatar.png' %}" alt="">
                             {% endif %}
                             <div class="mv-item-infor">
-                                <h6><a href="{% url 'movie:movie-detail' movie.slug %}" style="color: rgba(226,150,53) !important;">{{ movie.title }}
+                                <h6><a href="{% url 'movie:movie-detail' movie.slug %}" style="color: rgba(226,150,53);">{{ movie.title }}
                                     <span>( {{ movie.year }} )</span></a></h6>
                                 <p class="rate"><i class="fas fa-star"></i><span> {{ movie.imdb_score }} </span> /10</p>
                                 <p class="genres"> {{ movie.genres }} </p>
-                                <p class="describe"> {{ movie.description|truncatewords:25 }}...</p>
+                                <p class="describe" style="margin-bottom: 6px; padding-bottom: 6px;"> {{ movie.description|truncatewords:25 }}...</p>
                                 <p>Wydano: {{ movie.year }}</p>
                                 <p>Cena: {{ movie.price }} PLN</p>
-                                <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn" style="border-radius: 10px; background: rgb(255,200,53) !important; background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%) !important; ">WYKUP FILM</a>
+                                <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn" style="width: 50%; padding: 6px; border-radius: 20px; background: rgb(255,200,53); background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%); ">WYKUP FILM</a><br>
+                                <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn" style="width: 50%; margin-top: 5px; padding: 6px; border-radius: 20px; background: transparent; border: 1px solid #aeaeae; color: #aeaeae;">DOWIEDZ SIĘ WIĘCEJ</a>
+
                             </div>
                         </div>
                     {% endfor %}

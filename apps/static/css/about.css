@@ -26,7 +26,7 @@
   font-size: 60px;
   position: relative;
   text-transform: uppercase;
-  font-family: "Roboto Slab", serif;
+  font-family: 'Poppins', sans-serif;
   color: rgb(0, 0, 0);
   -webkit-font-smoothing: antialiased;
   background-color: #1f1f1f;
@@ -53,7 +53,7 @@
   margin: 0.25em;
 }
 .jumbotron.text-center {
-  background-image: url('../img/di-nhan-8-phuong-hoang-bong-toi-x-men-dark-phoenix-2019-slider.jpg');
+  /*background-image: url('../img/di-nhan-8-phuong-hoang-bong-toi-x-men-dark-phoenix-2019-slider.jpg');*/
   background-size: cover;
   opacity: 0.7;
   margin: 0;
@@ -83,7 +83,7 @@ h1.separator {
 }
 .sigin {
   text-transform: uppercase;
-  font-family: "Roboto Slab", serif;
+  font-family: 'Poppins', sans-serif;
   margin-top: 0;
   margin-bottom: 0;
   letter-spacing: 0.12em;

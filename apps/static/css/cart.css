@@ -4,7 +4,7 @@
   font-size: 60px;
   position: relative;
   text-transform: uppercase;
-  font-family: "Roboto Slab", serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   background-color: #1f1f1f;
   color: white;
@@ -30,7 +30,7 @@
   margin: 0.25em;
 }
 .jumbotron.text-center {
-  background-image: url('../img/di-nhan-8-phuong-hoang-bong-toi-x-men-dark-phoenix-2019-slider.jpg');
+  /*background-image: url('../img/di-nhan-8-phuong-hoang-bong-toi-x-men-dark-phoenix-2019-slider.jpg');*/
   background-size: cover;
   opacity: 0.7;
   margin: 0;
@@ -60,7 +60,7 @@ h1.separator {
 }
 .sigin {
   text-transform: uppercase;
-  font-family: "Roboto Slab", serif;
+  font-family: 'Poppins', sans-serif;
   margin-top: 0;
   margin-bottom: 0;
   letter-spacing: 0.12em;
@@ -76,7 +76,7 @@ hr {
 }
 
 .SI {
-  font-family: "Roboto Slab", serif;
+  font-family: 'Poppins', sans-serif;
   width: 100%;
 }
 
@@ -150,7 +150,7 @@ table.table.table-hover.text-left {
 .table thead tr th {
   padding-top: 15px;
   padding-bottom: 15px;
-  font-family: "Roboto Slab", serif;
+  font-family: 'Poppins', sans-serif;
   empty-cells: hide;
 }
 
@@ -216,7 +216,7 @@ form {
 
 .btn {
   text-transform: uppercase;
-  font-family: "Roboto Slab", serif;
+  font-family: 'Poppins', sans-serif;
   letter-spacing: 0;
   border-width: 2px;
   transition: 0.4s;

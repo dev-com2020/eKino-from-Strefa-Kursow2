@@ -49,10 +49,10 @@
   }
 }
 .movie-item-style-2 .mv-item-infor h6 {
-  margin-bottom: 10px;
+  margin-bottom: 3px;
 }
 .movie-item-style-2 .mv-item-infor h6 a {
-  font-family: "Dosis", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
@@ -61,9 +61,9 @@
   color: #abb7c4;
 }
 .movie-item-style-2 .mv-item-infor .describe {
-  padding-bottom: 25px;
+  padding-bottom: 15px;
   border-bottom: 1px solid #405266;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 .movie-item-style-2 .mv-item-infor .run-time span {
   margin-left: 15px;

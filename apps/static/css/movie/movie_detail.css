@@ -7,11 +7,14 @@ div.row {
   padding-right: 0;
   padding-bottom: 2%;
 }
+
+
+
 .jumbotron.text-center {
   font-size: 60px;
   position: relative;
   text-transform: uppercase;
-  font-family: "Roboto Slab", serif;
+  font-family: 'Poppins', sans-serif;
   color: rgb(0, 0, 0);
   background-color: #1f1f1f;
     color: white;
@@ -45,7 +48,7 @@ div.row {
 }
 
 .jumbotron.text-center {
-  background-image: url('../../img/di-nhan-8-phuong-hoang-bong-toi-x-men-dark-phoenix-2019-slider.jpg');
+  /*background-image: url('../../img/di-nhan-8-phuong-hoang-bong-toi-x-men-dark-phoenix-2019-slider.jpg');*/
   background-size: cover;
   opacity: 0.7;
   margin: 0;
@@ -76,7 +79,7 @@ h1.separator {
 }
 .TitleO {
   text-transform: uppercase;
-  font-family: "Roboto Slab", serif;
+  font-family: 'Poppins', sans-serif;
   margin-top: 0;
   margin-bottom: 0;
   letter-spacing: 0.12em;
@@ -193,7 +196,7 @@ h1 {
 }
 .Lyc {
   text-transform: uppercase;
-  font-family: "Roboto Slab", serif;
+  font-family: 'Poppins', sans-serif;
   margin-top: 0;
   margin-bottom: 0;
   letter-spacing: 0.12em;
@@ -204,7 +207,7 @@ h1 {
 }
 .btnsm {
   margin-top: 3%;
-  font-family: "Roboto Slab", serif;
+  font-family: 'Poppins', sans-serif;
 }
 input#exampleFormControlInput1 {
   background-color: rgba(246, 246, 246, 0.8);
