@@ -56,7 +56,7 @@
                                                     {{ cart_movie.movie.title }}
                                                 </a>
                                             </td>
-                                            <td style="color: #e2e2e2 !important;">{{ cart_movie.movie.price }}$</td>
+                                            <td style="color: #e2e2e2 !important;">{{ cart_movie.movie.price }} PLN</td>
                                         </tr>
                                     {% empty %}
                                         <tr>
@@ -88,7 +88,7 @@
                                         <tbody>
                                         <tr>
                                             <td class="text-gray" style="color: #e2e2e2 !important;">Total</td>
-                                            <td class="fw-b" style="color: #e2e2e2 !important;">{{ cart.get_total }}$</td>
+                                            <td class="fw-b" style="color: #e2e2e2 !important;">{{ cart.get_total }} PLN</td>
                                         </tr>
                                     {% endif %}
                                     </tbody>
@@ -99,7 +99,7 @@
                                            href="{% url 'checkout:checkout' %}" style="border-radius: 10px; background: rgb(255,200,53) !important; background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%) !important; width: 100% !important; padding: 15px 0;">Przejdź do płatności</a>
                                     {% else %}
                                         <a class="btn btn-sm btn-min-width-lg offset-custom-5"
-                                           href="/movie/all/" style="border-radius: 10px; background: rgb(255,200,53) !important; background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%) !important; width: 40% !important; padding: 15px 0;">Continue Shopping</a>
+                                           href="/movie/all/" style="border-radius: 10px; background: rgb(255,200,53) !important; background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%) !important; width: 40% !important; padding: 15px 0;">Kontynuuj zakupy</a>
                                     {% endif %}
                                     </td>
                                     </div>

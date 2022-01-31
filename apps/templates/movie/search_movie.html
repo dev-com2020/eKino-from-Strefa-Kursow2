@@ -39,7 +39,7 @@
             <ol class="breadcrumb" style="background: #1f1f1f !important">
                 <li class="breadcrumb-item"><a class="mau" href="#">Home</a></li>
                 <li class="breadcrumb-item"><a class="mau" href="#">Movie</a></li>
-                <li class="breadcrumb-item active" aria-current="page"><a class="mau" href="#">Szukane filmy: {{ request.GET.movie_name }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a class="mau" href="#">Szukana fraza: {{ request.GET.movie_name }}</a></li>
             </ol>
         </nav>
     </section>
@@ -67,7 +67,7 @@
                                 <p class="genres"> {{ movie.genres }} </p>
                                 <p class="describe"> {{ movie.description|truncatewords:25 }}...</p>
                                 <p>Wydano: {{ movie.year }}</p>
-                                <p>Cena: {{ movie.price }}$</p>
+                                <p>Cena: {{ movie.price }} PLN</p>
                                 <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn" style="border-radius: 10px; background: rgb(255,200,53) !important; background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%) !important; padding: 11px 35px;">Kupuje</a>
                             </div>
                         </div>

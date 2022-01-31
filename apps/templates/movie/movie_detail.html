@@ -78,53 +78,27 @@ width: 20%;
         <div class="jumbotron text-center" style="background: none;">
 <!--            <h1 class="separator">Fakty</h1>-->
 <!--            <span class="font-weight-bold">Szczegóły</span>-->
+            <div class="row" style="margin-left:800px;">
 
-            <div class="row" >
-                <div style="box-shadow: inset -80px -80px 50px 100px rgba(0,0,0,0.6);">
-                    <center>
-                        <img src="https://posterposse.com/wp-content/uploads/2016/04/Jungle_Book_Tryptich.jpg"
-                                         class="d-block w-75" alt="..." width=100% style="opacity: 0.2;">
+
+                        <img src="{{ movie.poster.url }}" alt="{{ movie.title }}"
+                                         class="d-block w-50" alt="..." width=100% style="opacity: 0.9;">
                         <div class="carouselDetails" style="box-shadow: inset 0 0 0 0 rgba(31,31,31,0) !important; text-align: left;">
                             <span><a href="#" style="color: #1f1f1f; border-radius: 4vh; background: rgb(255,200,53); background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%); padding: 6px 25px;">FILM</a></span>
-                            <h1 style="margin-top: 10px;"><a href="/movie/the-jungle-book">THE JUNGLE BOOK</a></h1>
-                            <p style="color: #aeaeae; font-size: 18px;">2016, Drama, Romance</p>
-                            <p class="rate" style="color: #aeaeae; font-size: 18px; padding-bottom:70px;"><i class="fas fa-star" style="color:#f9be30;"></i><span> 7.4</span> /10</p>
-
+                            <h1 style="margin-top: 10px;"><a href="#">{{ movie.title }}</a></h1>
+                            <p style="color: #aeaeae; font-size: 18px;">{{ movie.genres }}</p>
+                            <p class="rate" style="color: #aeaeae; font-size: 18px; padding-bottom:70px;"><i class="fas fa-star" style="color:#f9be30;"></i><span>{{ movie.imdb_score }}</span> /10</p>
                         </div>
-                    </center>
-
-<div><button class="btnSearch">Czytaj więcej</button></div>
-
                 </div>
-
-
             </div>
-
-
-
-        </div>
-
-
-        <div class="col-6">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wnq3w_EqeNc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-
-
-
-    </section>
+           </section>
 
 <section class="describes">
 
      <h2 class="TitleO" style="text-align: left; margin-left: 15%; padding-bottom: 30px; font-size: 24px; letter-spacing: 1px;">Opis filmu</h2>
     <div class="describe">
-        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet at dolor dolore enim eum hic ipsam mollitia neque nihil non nostrum optio
-            placeat quis quod reprehenderit, tenetur veritatis. Laborum, perferendis.</span><span>Accusantium assumenda aut deserunt doloribus eius eum
-            facilis fuga fugiat hic id in nobis, non nulla perferendis possimus provident quam quisquam quos reiciendis repellat sint temporibus tenetur
-            totam vero voluptas!</span><span>Ab esse excepturi maiores nobis numquam odio quibusdam, quisquam rem soluta voluptatum! Cumque dicta
-            doloremque, doloribus, exercitationem fuga illum itaque laborum modi perferendis qui reiciendis repellat rerum sint vitae voluptates!</span>
-            <span>Accusamus adipisci consectetur consequatur dignissimos dolorum eius eligendi esse eveniet facilis
-            harum illo in laboriosam maxime neque nesciunt non nostrum nulla optio placeat porro praesentium quae, quia quibusdam quo veniam.</span></p>
-
+        <p><span></span></p>
+{{ movie.description|truncatewords:30}}-->
     </div>
 
 </section>
@@ -202,7 +176,7 @@ width: 20%;
             <div class="row justify-content-md-center">
                 {% for actor in movie.actors.all %}
                 <div class="col col-xl-4" style="padding:0;">
-                    <div class="cast-box-media" style="margin: 0;">
+                    <div class="cast-box-media" style="margin: 10px;">
                         {% if actor.photo == "nophoto" %}
                             <img class="imge" src="{% static 'img/no-photo.jpg' %}" alt="{{ actor.name }}">
                         {% else %}
@@ -220,7 +194,7 @@ width: 20%;
 
 
     <section class="section5">
-        <h2 class="TitleO">Reviews</h2>
+        <h2 class="TitleO">Oceny</h2>
         <hr>
         <div class="container">
             <div class="card-body">
@@ -291,21 +265,21 @@ width: 20%;
                             <div class="form-wrap">
                                 <label for="exampleFormControlInput1"></label>
                                 <input type="text" class="form-control" id="exampleFormControlInput1"
-                                       placeholder="Your First Name...">
+                                       placeholder="Imię lub nick...">
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-wrap">
                                 <label for="exampleFormControlInput1"></label>
                                 <input type="text" class="form-control" id="exampleFormControlInput1"
-                                       placeholder="Your Email..." style="margin: 10px 25px; float: right;">
+                                       placeholder="Email..." style="margin: 10px 25px; float: right;">
                             </div>
                         </div>
                         <div class="col-12 col-md-12">
                             <div class="form-wrap">
                                 <label for="exampleFormControlTextarea1"></label>
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                          placeholder="Messages"></textarea>
+                                          placeholder="Wiadomość"></textarea>
                             </div>
                         </div>
                         <div class="col-12 text-center">

@@ -63,7 +63,7 @@
                                 <p>Wydano: {{ movie.year }}</p>
                                 <p>Cena: {{ movie.price }} PLN</p>
                                 <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn" style="width: 50%; padding: 6px; border-radius: 20px; background: rgb(255,200,53); background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%); ">WYKUP FILM</a><br>
-                                <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn" style="width: 50%; margin-top: 5px; padding: 6px; border-radius: 20px; background: transparent; border: 1px solid #aeaeae; color: #aeaeae;">DOWIEDZ SIĘ WIĘCEJ</a>
+                                <a href="{% url 'movie:movie-detail' movie.slug %}" class="btn" style="width: 50%; margin-top: 5px; padding: 6px; border-radius: 20px; background: transparent; border: 1px solid #aeaeae; color: #aeaeae;">DOWIEDZ SIĘ WIĘCEJ</a>
                             </div>
                         </div>
                     {% endfor %}
@@ -89,7 +89,7 @@
                                 <p>Wydano: {{ movie.year }}</p>
                                 <p>Cena: {{ movie.price }} PLN</p>
                                 <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn" style="width: 50%; padding: 6px; border-radius: 20px; background: rgb(255,200,53); background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%); ">WYKUP FILM</a><br>
-                                <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn" style="width: 50%; margin-top: 5px; padding: 6px; border-radius: 20px; background: transparent; border: 1px solid #aeaeae; color: #aeaeae;">DOWIEDZ SIĘ WIĘCEJ</a>
+                                <a href="{% url 'movie:movie-detail' movie.slug %}" class="btn" style="width: 50%; margin-top: 5px; padding: 6px; border-radius: 20px; background: transparent; border: 1px solid #aeaeae; color: #aeaeae;">DOWIEDZ SIĘ WIĘCEJ</a>
 
                             </div>
                         </div>

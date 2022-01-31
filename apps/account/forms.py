@@ -11,10 +11,10 @@ import re
 
 class SignUpForm(UserCreationForm):
     captcha = ReCaptchaField(label="", )
-    username = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Username'}))
-    email = forms.EmailField(label="", max_length=150, widget=forms.EmailInput(attrs={'placeholder': 'Email'}))
-    password1 = forms.CharField(label="", widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
-    password2 = forms.CharField(label="", widget=forms.PasswordInput(attrs={'placeholder': 'Password Again'}))
+    username = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Nazwa użytkownika'}))
+    email = forms.EmailField(label="", max_length=150, widget=forms.EmailInput(attrs={'placeholder': 'E-mail'}))
+    password1 = forms.CharField(label="", widget=forms.PasswordInput(attrs={'placeholder': 'Hasło'}))
+    password2 = forms.CharField(label="", widget=forms.PasswordInput(attrs={'placeholder': 'Ponownie wpisz hasło'}))
 
     class Meta:
         model = CustomerUser

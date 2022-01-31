@@ -71,7 +71,7 @@
 
   .search-button {
     position: absolute;
-    right: -85%;
+    right: -65%;
     top: 50%;
     height: 44px;
     width: 267px;
@@ -142,21 +142,19 @@
 
 
   #header-1 .search-box .search-input {
-    position: absolute;
-    top: 0;
-    left: 65%;
-    width: 60%;
-    height: 100%;
-    padding: 1em 1em;
-    background-color: transparent;
-    opacity: 0;
-    padding-left: 80px;
-    border-color: transparent;
-    outline: none;
-  }
-
-  #header-1 .search-box .search-input::-webkit-input-placeholder {
-    color: white;
+  position: absolute;
+  top: 5%;
+  left: 65%;
+  width: 40%;
+  height: 100%;
+  padding: 1.5em 1em;
+  background-color: transparent;
+  opacity: 1;
+  padding-left: 15px;
+  border-color: transparent;
+  outline: none;
+  color: white;
+}
   }
   #header-1.show .search-box {
     max-height: 40px;
@@ -250,10 +248,10 @@
 <!--             </li>-->
 
               {% if user.is_authenticated %}
-<!--              <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>-->
-<!--                <a class="list-item" href="{% url 'cart:cart' %}">-->
-<!--                  <i class="fas fa-shopping-cart"></i></a>-->
-<!--              </li>-->
+              <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                <a class="list-item" href="{% url 'cart:cart' %}">
+                  <i class="fas fa-shopping-cart"> Koszyk</i></a>
+              </li>
 <!--              <input type="text" placeholder="co dzisiaj oglądamy?" style=" border-radius: 4vh;-->
 <!--    border-color: #E29635; font-size: 16px; padding-left: 10px;">-->
               <li class="nav-item dropdown">
@@ -261,7 +259,7 @@
                   class="nav-link dropdown-toggle"
                   href="#"
                   data-toggle="dropdown"
-                  id="SearchButton">{{ user.username }}
+                  id="SearchButton"><i class="fas fa-user-circle"></i> {{ user.username }}
                 </a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="/account/profile"
@@ -275,11 +273,10 @@
               {% else %}
               <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
                 <a class="list-item" href="{% url 'login' %}"
-                  ><i class="fas fa-shopping-cart"></i
-                ></a>
+                  ><i class="fas fa-shopping-cart"></i> Koszyk</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Zapisz się</a>
+                <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-user-circle"></i> Logowanie</a>
               </li>
               {% endif %}
             </ul>
@@ -293,7 +290,7 @@
               <input
                 type="text"
                 class="search-input"
-                style="border: none; color: white !important;"
+                style="border: none; color: white;"
                 name="movie_name"
                 type="text"
                 placeholder="Co dzisiaj oglądamy?"
@@ -317,7 +314,6 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"
   ></script>
-
   <script type="text/javascript">
 $(".header").on("click",".search-toggle",function(e){
 var selector = $(this).data("selector");
