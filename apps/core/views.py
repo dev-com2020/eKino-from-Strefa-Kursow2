@@ -14,6 +14,7 @@ class ContactView(TemplateView):
 
 class HomeListView(ListView):
     model = Movie
+    queryset = Movie.objects.all().order_by('?')[:10]
     context_object_name = "movie_list"
     template_name = "core/home.html"
     paginate_by = 6
