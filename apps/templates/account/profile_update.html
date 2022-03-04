@@ -44,7 +44,7 @@
                 <img class="card-img-top" src="{{ user.photo.url }}" alt="image" style="width:150px", height="200px">
                 {% else %}
                 <img class="card-img-top" src="{% static 'img/no-avatar.png' %}" alt="image" style="width:150px", height="200px">
-                {% endif %}</div></center>
+                {% endif %}</div>
             <div class="card-body">
                 <h4 class="card-title">{{ user.username }}</h4>
                 <a href="{% url 'password_change' %}" class="btn btn-info" style="border-radius: 10px; background: rgb(255,200,53) !important; background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%) !important; width: 100% !important; padding: 15px 0;">Zmiana hasła!</a>
@@ -71,7 +71,7 @@
               <div class="form-group">
                 {% render_field form.photo|as_crispy_field %}
               </div>
-              {% render_field form.captcha|as_crispy_field %}
+<!--              {% render_field form.captcha|as_crispy_field %}-->
             {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
             {% endif %}

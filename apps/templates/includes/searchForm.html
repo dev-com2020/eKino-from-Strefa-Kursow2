@@ -1,0 +1,180 @@
+<style>
+
+.searchMovies{
+width: 70%;
+height: 25vh;
+background-color: #1f1f1f;
+margin: 0 auto;
+}
+
+h5{
+padding: 30px 0 0 30px;
+
+}
+
+form{
+width: 100%;
+padding: 10px 30px;
+}
+
+    .upperInput,
+    .lowerInput
+    {
+    width: 100%;
+    background-color: white;
+    border-radius: 4vh;
+    border-color: #E29635;
+    border: 2px solid #E29635;
+    margin-top: 5px;
+
+    }
+
+    .lowerInput{
+        background-color: transparent;
+        width: 100%;
+        border: none;
+    }
+
+    .upperInput input,
+    .lowerInput input{
+    background-color: transparent;
+    padding: 5px 8px;
+    border-width: 0;
+    text-align: left;
+           opacity: 1;
+       color: black;
+    }
+
+    .upperInput input::placeholder{
+    padding-right: 10px;
+    width: 100%;
+
+    }
+
+    .upperInput input:focus,
+    .lowerInput input:focus{
+       outline: none;
+       border: none;
+       opacity: 1;
+       color: black;
+    }
+
+    .lowerInput{
+    display: flex;
+    flex-direction: row;
+flex-wrap: no-wrap;
+justify-content: flex-start;
+align-items: center;
+align-content: center;
+    }
+
+    .firstInput,
+    .secondInput,
+    .thirdInput{
+    position: relative;
+    width: 35%;
+    background-color: white;
+    border-radius: 4vh;
+    border-color: #E29635;
+    border: 2px solid #E29635;
+    outline: none;
+    text-align: left;
+    margin-left: 25px;
+    padding-left: 5px;
+    }
+
+    .firstInput{
+    margin-left:0;
+    }
+
+    .lowerInput select{
+border: none;
+width: 95%;
+}
+
+
+    .lowerInput .fas{
+    position: absolute;
+    top:25%;
+    right: 5%;
+    }
+
+
+    div.btnSearchMain{
+    width: 97%;
+    text-align: center;
+    }
+
+
+
+.btnSearch{
+border-radius: 4vh;
+background: rgb(255,200,53);
+background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%);
+padding: 10px 40px;
+width: 20%;
+margin-top: 20px;
+    text-decoration: none;
+    color: #1f1f1f;
+    border: none;
+}
+
+
+</style>
+<script type="text/javascript">
+$(".header").on("click",".search-toggle",function(e){
+var selector = $(this).data("selector");
+$(selector).toggleClass("show").find(".search-input").focus();
+$(this).toggleClass("active")
+e.preventDefault();
+});
+</script>
+
+<div class="col-12">
+
+<div class="searchMovies" style="margin-top: 50px;">
+
+    <h5>Szukaj filmów:</h5>
+
+    <form action="{% url 'movie:search-movie' %}">
+        <div class="upperInput">
+            <input  type="text"
+                class="search-input"
+
+                name="movie_name"
+                type="text"
+                placeholder="Co dzisiaj oglądamy?"
+                value="{{ request.GET.search }}">
+        </div>
+        <div class="lowerInput">
+            <div class="firstInput">
+                <select id="gatunek" name="gatunek">
+                 {% for movie in movie_list %}
+                    <option value="{{ movie.genres }}">{{ movie.genres }}</option>
+                {% endfor %}
+                       </select>
+                </div>
+
+
+            <div class="secondInput">
+                <select id="data" name="data">
+                 {% for movie in movie_list %}
+                    <option name="{{ movie.year }}">{{ movie.year }}</option>
+                {% endfor %}
+                       </select>
+            </div>
+            <div class="thirdInput">
+                <select id="kraj" name="kraj">
+                 {% for movie in movie_list %}
+                    <option name="{{ movie.country }}">{{ movie.country }}</option>
+                {% endfor %}
+                       </select>
+            </div>
+        </div>
+            <div class="btnSearchMain"><button class="btnSearch">szukaj</button></div>
+    </form>
+
+
+</div>
+
+    </div>

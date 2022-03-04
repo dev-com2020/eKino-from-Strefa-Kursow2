@@ -178,9 +178,9 @@ width: 20%;
                 <div class="col col-xl-4" style="padding:0;">
                     <div class="cast-box-media" style="margin: 10px;">
                         {% if actor.photo == "nophoto" %}
-                            <img class="imge" src="{% static 'img/no-photo.jpg' %}" alt="{{ actor.name }}">
+                            <img class="imge" src="{% static 'img/no-photo.jpg' %}" alt="{{ actor.name }}" style="object-fit: cover; object-position:50% 0;">
                         {% else %}
-                            <img class="imge" src="{{ actor.photo.url }}" alt="{{ actor.name }}">
+                            <img class="imge" src="{{ actor.photo.url }}" alt="{{ actor.name }} style="object-fit: cover; object-position:50% 0;">
                         {% endif %}
                         <div class="cast-box-text">
                             <h6 class="text-white">{{ actor.name }}</h6>
@@ -193,103 +193,103 @@ width: 20%;
     </section>
 
 
-    <section class="section5">
-        <h2 class="TitleO">Oceny</h2>
-        <hr>
-        <div class="container">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-1"><img class="img-circle imge"
-                                               src="https://livedemo00.template-help.com/wt_prod-20691/images/index-13.jpg"
-                                               alt=""></src></div>
-                <div class="col-md-10">
-                    <p><a class="float-left" href="#" style="color: rgba(226,150,53) !important;"><strong>Jack Wilson</strong></a>
-                        <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-                        <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-                        <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-                        <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-                    </p>
-                    <div class="clearfix"></div>
-                    <div class="blog-post-time text-left">
-                        <time datetime="2018-04-24" class="text-muted">April 24, 2020 at 10:46 am</time>
-                        <p style="text-align: justify;">Lorem Ipsum is simply dummy text of the pr make but also the
-                            leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
-                            1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
-                            with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    </div>
-                    <p><a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i> Reply</a>
-                        <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
-                    </p>
-                </div>
-            </div>
-            <div class="card-inner">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-1">
-                            <div><img class="img-circle imge"
-                                      src="https://livedemo00.template-help.com/wt_prod-20691/images/index-12.jpg"
-                                      alt=""></div>
-                        </div>
-                        <div class="col-md-10">
-                            <p><a class="float-left" href="#" style="color: rgba(226,150,53) !important;"><strong>Jack Wilson</strong></a>
-                                <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-                                <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-                                <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-                            </p>
-                            <div class="clearfix"></div>
-                            <div class="blog-post-time text-left">
-                                <time datetime="2018-04-24">April 24, 2020 at 10:46 am &nbsp;</time>
-                                <i class="fa fa-reply">&nbsp; Jack Wilson</i> <br>
+<!--    <section class="section5">-->
+<!--        <h2 class="TitleO">Oceny</h2>-->
+<!--        <hr>-->
+<!--        <div class="container">-->
+<!--            <div class="card-body">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-md-1"><img class="img-circle imge"-->
+<!--                                               src="https://livedemo00.template-help.com/wt_prod-20691/images/index-13.jpg"-->
+<!--                                               alt=""></src></div>-->
+<!--                <div class="col-md-10">-->
+<!--                    <p><a class="float-left" href="#" style="color: rgba(226,150,53) !important;"><strong>Jack Wilson</strong></a>-->
+<!--                        <span class="float-right"><i class="text-warning fa fa-star"></i></span>-->
+<!--                        <span class="float-right"><i class="text-warning fa fa-star"></i></span>-->
+<!--                        <span class="float-right"><i class="text-warning fa fa-star"></i></span>-->
+<!--                        <span class="float-right"><i class="text-warning fa fa-star"></i></span>-->
+<!--                    </p>-->
+<!--                    <div class="clearfix"></div>-->
+<!--                    <div class="blog-post-time text-left">-->
+<!--                        <time datetime="2018-04-24" class="text-muted">April 24, 2020 at 10:46 am</time>-->
+<!--                        <p style="text-align: justify;">Lorem Ipsum is simply dummy text of the pr make but also the-->
+<!--                            leap into electronic typesetting, remaining essentially unchanged. It was popularised in the-->
+<!--                            1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently-->
+<!--                            with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>-->
+<!--                    </div>-->
+<!--                    <p><a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i> Reply</a>-->
+<!--                        <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="card-inner">-->
+<!--                <div class="card-body">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-md-1">-->
+<!--                            <div><img class="img-circle imge"-->
+<!--                                      src="https://livedemo00.template-help.com/wt_prod-20691/images/index-12.jpg"-->
+<!--                                      alt=""></div>-->
+<!--                        </div>-->
+<!--                        <div class="col-md-10">-->
+<!--                            <p><a class="float-left" href="#" style="color: rgba(226,150,53) !important;"><strong>Jack Wilson</strong></a>-->
+<!--                                <span class="float-right"><i class="text-warning fa fa-star"></i></span>-->
+<!--                                <span class="float-right"><i class="text-warning fa fa-star"></i></span>-->
+<!--                                <span class="float-right"><i class="text-warning fa fa-star"></i></span>-->
+<!--                            </p>-->
+<!--                            <div class="clearfix"></div>-->
+<!--                            <div class="blog-post-time text-left">-->
+<!--                                <time datetime="2018-04-24">April 24, 2020 at 10:46 am &nbsp;</time>-->
+<!--                                <i class="fa fa-reply">&nbsp; Jack Wilson</i> <br>-->
 
-                            </div>
-                            <p><a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i>
-                                Reply</a>
-                                <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
+<!--                            </div>-->
+<!--                            <p><a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i>-->
+<!--                                Reply</a>-->
+<!--                                <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--    </section>-->
 
-    <section class="section6">
-        <div class="row justify-content-center">
-            <div class="col-md-8 text-center">
-                <h4 class="Lyc">Zostaw swój komentarz</h4>
-                <!-- RD Mailform-->
-                <form class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="forms" novalidate="novalidate">
-                    <div class="row row-10">
-                        <div class="col-12 col-md-6">
-                            <div class="form-wrap">
-                                <label for="exampleFormControlInput1"></label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1"
-                                       placeholder="Imię lub nick...">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="form-wrap">
-                                <label for="exampleFormControlInput1"></label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1"
-                                       placeholder="Email..." style="margin: 10px 25px; float: right;">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-12">
-                            <div class="form-wrap">
-                                <label for="exampleFormControlTextarea1"></label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                          placeholder="Wiadomość"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-12 text-center">
-                            <button class="btn btn-lg btnsm" style="border-radius: 10px; background: rgb(255,200,53) !important; background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%) !important; width: 100% !important; padding: 15px 0;">ZAPISZ</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
+<!--    <section class="section6">-->
+<!--        <div class="row justify-content-center">-->
+<!--            <div class="col-md-8 text-center">-->
+<!--                <h4 class="Lyc">Zostaw swój komentarz</h4>-->
+<!--                &lt;!&ndash; RD Mailform&ndash;&gt;-->
+<!--                <form class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="forms" novalidate="novalidate">-->
+<!--                    <div class="row row-10">-->
+<!--                        <div class="col-12 col-md-6">-->
+<!--                            <div class="form-wrap">-->
+<!--                                <label for="exampleFormControlInput1"></label>-->
+<!--                                <input type="text" class="form-control" id="exampleFormControlInput1"-->
+<!--                                       placeholder="Imię lub nick...">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-12 col-md-6">-->
+<!--                            <div class="form-wrap">-->
+<!--                                <label for="exampleFormControlInput1"></label>-->
+<!--                                <input type="text" class="form-control" id="exampleFormControlInput1"-->
+<!--                                       placeholder="Email..." style="margin: 10px 25px; float: right;">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-12 col-md-12">-->
+<!--                            <div class="form-wrap">-->
+<!--                                <label for="exampleFormControlTextarea1"></label>-->
+<!--                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"-->
+<!--                                          placeholder="Wiadomość"></textarea>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-12 text-center">-->
+<!--                            <button class="btn btn-lg btnsm" style="border-radius: 10px; background: rgb(255,200,53) !important; background: linear-gradient(135deg, rgba(255,200,53,1) 0%, rgba(226,150,53,1) 100%) !important; width: 100% !important; padding: 15px 0;">ZAPISZ</button>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
 
 {% include 'includes/footer.html' %}
 
