@@ -5,7 +5,7 @@
 {% load crispy_forms_tags %}
 
 {% block title %}
-    Sign Up | Movie Center
+    Zapisz się | e-Kino
 {% endblock title %}
 
 {% block cssblock %}
@@ -53,7 +53,7 @@
 
                     <div class="row justify-content-center offset-custom-5">
                         <div class="col-xl-6 col-xl offset-custom-3">
-                            <p class="text-uppercase text-center EFOr">or</p>
+                            <p class="text-uppercase text-center EFOr">lub</p>
                             <form class="rd-mailform text-left" method="post" action="{% url 'signup' %}">
                                 {% csrf_token %}
                                 <div class="form-group">
@@ -69,7 +69,7 @@
                                     {% render_field form.email|as_crispy_field %}
                                 </div>
                                 <div class="form-group">
-<!--                                    {% render_field form.captcha|as_crispy_field %}-->
+                                    {% render_field form.captcha|as_crispy_field %}
                                 </div>
                                 {% if redirect_field_value %}
                                     <input type="hidden" name="{{ redirect_field_name }}"

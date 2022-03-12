@@ -8,4 +8,4 @@ class UserTokenGenerator(PasswordResetTokenGenerator):
         is_active = text_type(user.is_active)
         return f"{user_id}{ts}{is_active}"
 
-user_tokenizer = UserTokenGenerator
+user_tokenizer = UserTokenGenerator()

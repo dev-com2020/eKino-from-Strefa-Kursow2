@@ -24,15 +24,15 @@ class SignUpForm(UserCreationForm):
     def clean_username(self):
         username = self.cleaned_data['username']
         if not re.search(r'^\w+$', username):
-            raise forms.ValidationError("Letters and numbers only. Please try again without symbols.")
+            raise forms.ValidationError("Tylko litery lub cyfry.")
         if len(username) < 8:
-            raise forms.ValidationError("Username has to be longer then 8 characters.")
+            raise forms.ValidationError("Nazwa użytkownika musi mieć 8 lub więcej znaków.")
         return username
 
     def clean_email(self):
         email = self.cleaned_data['email']
         if CustomerUser.objects.filter(email=email).exists():
-            raise forms.ValidationError('Your email address is already registered.')
+            raise forms.ValidationError('Taki email jest już zarejestrowany.')
         return email
 
 
@@ -46,13 +46,13 @@ class UpdateProfileForm(forms.ModelForm):
     def clean_first_name(self):
         first_name = self.cleaned_data['first_name']
         if not re.search(r'^\w+$', first_name):
-            raise forms.ValidationError("Letters and numbers only. Please try again without symbols.")
+            raise forms.ValidationError("Tylko litery lub cyfry.")
         return first_name
 
     def clean_last_name(self):
         last_name = self.cleaned_data['last_name']
         if not re.search(r'^\w+$', last_name):
-            raise forms.ValidationError("Letters and numbers only. Please try again without symbols.")
+            raise forms.ValidationError("Tylko litery lub cyfry.")
         return last_name
 
     def __init__(self, *args, **kwargs):
