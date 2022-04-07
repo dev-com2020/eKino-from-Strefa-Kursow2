@@ -165,7 +165,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = "devcomblog@gmail.com"
 EMAIL_HOST_PASSWORD = "Devcom123"
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = "MovieCenter <noreply@MovieCenter.com>"
+DEFAULT_FROM_EMAIL = "eKino <noreply@ekino.com>"
 
 # ==============================================================================
 # CACHE SETTINGS
