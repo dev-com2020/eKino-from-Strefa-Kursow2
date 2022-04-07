@@ -51,8 +51,8 @@ class UpdateProfileForm(forms.ModelForm):
 
     def clean_last_name(self):
         last_name = self.cleaned_data['last_name']
-        if not re.search(r'^\w+$', last_name):
-            raise forms.ValidationError("Tylko litery lub cyfry.")
+        # if not re.search(r'^\w+$', last_name):
+        #     raise forms.ValidationError("Tylko litery lub cyfry.")
         return last_name
 
     def __init__(self, *args, **kwargs):

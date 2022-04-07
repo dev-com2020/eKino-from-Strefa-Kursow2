@@ -3,14 +3,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registration Confirmation</title>
+    <title>Potwierdzenie rejestracji</title>
 </head>
 <body>
-<h1>Hi {{ user.username }}, welcome to The Movie Center</h1>
+<h1>Witaj {{ user.username }}, Witamy w eKino</h1>
 <br>
-<p>Please click this link to confirm your email and complete registering.</p>
+<p>Kliknij w link, żeby dokończyć rejestracje:</p>
 <p><a href="{{ confirm_url }}">{{ confirm_url }}</a></p>
 <br>
-<p>Sincerely, MovieCenter Team.</p>
+<p>Pozdrawiamy, zespół eKino.</p>
 </body>
 </html>

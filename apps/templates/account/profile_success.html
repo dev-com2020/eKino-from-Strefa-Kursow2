@@ -1,11 +1,11 @@
-% extends "base.html" %}
+{% extends "base.html" %}
 
 {% load crispy_forms_tags %}
 
 {% load static %}
 
 {% block title %}
-  Zapisz się | eKINO
+  Zmiana danych | eKINO
 {% endblock title %}
 
 {% block cssblock %}
@@ -36,7 +36,7 @@
       <div class="card card-signin my-5">
           <div class="card-body">
             <p>
-              <h1>Twój profil został zmieniony</h1>
+              <h1 style="color: black;">Twój profil został zmieniony</h1>
               <a class="btn btn-danger" href="{% url 'core:home' %}" style="color: rgba(226,150,53) !important;">Wróc do strony głównej</a>
             </p>
           </div>

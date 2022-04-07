@@ -12,7 +12,7 @@ app_name = "account"
 
 urlpatterns = [
     path("profile/", profile, name="update_profile"),
-    path("profile/success/", profile_success, name="profile_success"),
+    path("success/", profile_success, name="profile_success"),
     # registration
     path(
         "password_reset/",

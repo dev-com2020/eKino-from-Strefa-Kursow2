@@ -162,8 +162,8 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "testowy@gmail.com"
-EMAIL_HOST_PASSWORD = "1231231231"
+EMAIL_HOST_USER = "devcomblog@gmail.com"
+EMAIL_HOST_PASSWORD = "Devcom123"
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = "MovieCenter <noreply@MovieCenter.com>"
 

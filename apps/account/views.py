@@ -21,7 +21,7 @@ def profile(request):
         form = UpdateProfileForm(request.POST, instance=user, files=request.FILES)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect("/account/profile/success")
+            return HttpResponseRedirect("/account/success")
     else:
         form = UpdateProfileForm(instance=user)
     return render(request, "account/profile_update.html", {"form": form})
